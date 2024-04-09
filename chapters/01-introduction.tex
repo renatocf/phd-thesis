@@ -1,0 +1,137 @@
+%!TeX root=../thesis.tex
+%("dica" para o editor de texto: este arquivo é parte de um documento maior)
+% para saber mais: https://tex.stackexchange.com/q/78101/183146
+
+\chapter{Introduction}
+\label{chap:introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% [ ] What is the big data phenomenon?
+Data is being produced on a scale never seen in history. The so-called
+``big data phenomenon'' has been represented by three changes in how
+data is collected and processed:
+  the volume, going from terabytes up to zettabytes of storage;
+  the variety, going from structured to more unstructured sources; and
+  the velocity, going from batch to streaming%
+~\parencite{Sagiroglu2013BigReview}.
+Meanwhile, reasoning over and making decisions from large amounts of data
+has become a challenge and an opportunity for both academia and industry
+worldwide~\parencite{Lu2020ArtificialInnovation}.
+
+% [ ] What is Data Science?
+Data Science (DS) is an interdisciplinary field that mixes different skill
+sets to collect, organize, and analyze data \parencite{Hayashi1998WhatExample}.
+Traditionally, these tasks were in the realm of Statistics, which provides
+techniques to create insights from data. However, handling big data also
+requires knowledge about other fields, such as Computer Science, Business,
+and Sociology~\parencite{Cao2018DataScience,Dhar2013DataPrediction}.
+This enables creating data products that solve problems such as
+classification, recommendation, or decision-making%
+~\parencite{Cao2018DataScience,Lakshmanan2020MachinePatterns}.
+
+% [ ] What are Artificial Intelligence and Machine Learning?
+There is no generally accepted definition for Artificial Intelligence (AI)%
+~\parencite{Emmert-Streib2020ArtificialStatus}. As a field, the goal of AI
+is to understand and build intelligent entities, encompassing methods
+from different areas~\parencite{RussellS2021Artificial4th}. Among them,
+Machine Learning (ML) comprehends techniques that can learn from data,
+producing empirical solutions for problems~\parencite{Abu-Mostafa2012LearningData}.
+These broad descriptions blurry the line between the domains of Statistics,
+AI, and ML~\parencite{Emmert-Streib2020ArtificialStatus}. Regardless,
+the task of modeling, i.e., creating models from data, has become
+one of the primary responsibilities of modern data scientists%
+~\mbox{\parencite{Burkov2020MachineEngineering,Kim2016TheTeams,
+Lakshmanan2020MachinePatterns}}.
+
+% What are the limitations of Data Science?
+Since 2011, the interest in the term Data Science has grown steadily,
+with ``data scientist'' considered ``the sexiest job of the 21st century''%
+~\parencite{Cao2018DataScience,Davenport2012DataCentury}. Big tech companies
+such as Google, Microsoft, and Apple started developing and launching more
+AI-based products. Their experience led to an important understanding:
+models make only a small part of real-world intelligent systems%
+~\mbox{\parencite{Hulten2018BuildingSystems,Sculley2015HiddenSystems}}.
+Furthermore, AI/ML applications have three different axes of change:
+code, model, and data~\parencite{Sato2019ContinuousLearning}.
+This makes them inherently more complex than traditional software-based
+information systems~\parencite{Amershi2019SoftwareStudy}. In fact, building
+intelligent systems requires considering a whole AI hierarchy of needs%
+~\parencite{Rogati2017TheNeeds}, whereas maintaining them demands rigor
+against many types of technical debt~\parencite{Sculley2015HiddenSystems}.
+Unfortunately, Data Science alone does not focus on these requirements%
+~\parencite{Burkov2020MachineEngineering,Makinen2021WhoHelp,Menzies2020TheAI,
+Sato2019ContinuousLearning}.
+
+\clearpage
+
+% [ ] What is Machine Learning Engineering?
+Machine Learning Engineering (MLE) combines scientific principles, tools,
+and techniques from both Machine Learning and Software Engineering to build
+intelligent systems, including all stages from data collection to modeling
+and delivery~\parencite{Burkov2020MachineEngineering}. MLE complements
+Data Science by addressing the remaining infrastructure required by AI/ML
+systems, encompassing their axes of change~\parencite{Ozkaya2020WhatSystems,
+Sato2019ContinuousLearning}. Likewise, \emph{machine learning engineers}
+are a new set of specialized software engineers that help data scientists
+to build, deliver, and operate intelligent systems%
+~\mbox{\parencite{Burkov2020MachineEngineering,Lakshmanan2020MachinePatterns}}.
+
+% [ ] What is Intelligent Software Engineering? What is MLOps?
+The study and adaptation of Software Engineering practices for AI/ML
+systems have received different names in both academia and industry:
+\begin{itemize}
+  \item Intelligent Software Engineering -- ISE
+        \parencite{Xie2018IntelligentEngineering},
+  \item Software Engineering for Machine Learning -- SE4ML
+        \parencite{Amershi2019SoftwareStudy,
+                   Martinez-Fernandez2022SoftwareSurvey,
+                   Sculley2015HiddenSystems}, and
+  \item Software Engineering for Artificial Intelligence -- SE4AI 
+        \parencite{Carleton2020TheSE,
+                   Kastner2020TeachingSystems,
+                   Martinez-Fernandez2022SoftwareSurvey,
+                   Menzies2020TheAI}.
+\end{itemize}
+Although there is no consensus, the last term seems to be the most popular.
+Nevertheless, this project will use them interchangeably.
+
+% [ ] What is MLOps?
+Among SE4AI practices, Continuous Delivery for Machine Learning (CD4ML)
+has received particular attention~\parencite{Sato2019ContinuousLearning}.
+It extends the concept of Continuous Delivery (CD) to address the
+complexities of AI/ML systems. Meanwhile, Machine Learning Operations,
+also known as MLOps, became a trend in academia and industry%
+~\parencite{Tamburri2020SustainableChallenges}. Inspired by the
+DevOps movement, it describes a new generation of infrastructure tools
+that help to manage different stages of the lifecycle of an intelligent system%
+~\mbox{\parencite{Gift2021PracticalModels,Stenac2020IntroducingMLOps}}.
+In summary, MLOps enables CD4ML similarly to how DevOps enables CD.
+
+% [ ] Where are the limits of what we know?
+MLE, SE4AI, CD4ML, and MLOps are all relatively new concepts.
+% ~\parencite{Burkov2020MachineEngineering,Martinez-Fernandez2022SoftwareSurvey,
+%             Sato2019ContinuousLearning,Tamburri2020SustainableChallenges}.
+They were born from the challenges of delivering successful intelligent
+systems, and they grow motivated by the potential impact of new AI/ML
+products. Surveys evidence the growing interest in the subject, but also
+highlight important gaps in the literature: it is an area in its infancy%
+~\parencite{Giray2021AChallenges, Martinez-Fernandez2022SoftwareSurvey, 
+Tamburri2020SustainableChallenges}.
+
+Given this context, this Ph.D. research is driven by the general research
+question: \emph{how can we reliably build, deliver and operate successful
+intelligent systems?} Defining ``successful'' is a challenge on its own.
+Nevertheless, this project will use the modern definition from the CHAOS
+Report made by the Standish Group \parencite{Wojewoda2015CHAOS2015}:
+the system was delivered on a reasonable estimated time, stayed on budget,
+and delivered satisfaction for its users regardless of its original scope.
+Therefore, to address this research question, the thesis of this Ph.D.
+research is that it is possible to \emph{document processes and patterns
+that allow the successful development of intelligent systems}.
+
+This research internship project is divided as follows.
+  \Cref{chap:fundamentals} further introduces concepts relevant
+  to this research.
+  \Cref{chap:objectives} presents the objectives for the research.
+  Lastly, \Cref{chap:research_plan} shows the research plan with
+  a timetable for its execution.
