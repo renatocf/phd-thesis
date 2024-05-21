@@ -71,6 +71,9 @@
 % \textbr{blah} -> o texto "blah" é em português
 \babeltags{br = brazilian, en = english}
 
+\newcommand{\EnToBr}[1]{\textit{\textbr{#1}}}
+\newcommand{\BrToEn}[1]{\textit{\texten{#1}}}
+
 % Bibliografia
 \usepackage[
   %style=extras/plainnat-ime, % variante de autor-data, similar a plainnat
@@ -81,6 +84,63 @@
   %style=abnt,
 ]{biblatex}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PACOTES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% mdframed: create boxes around text
+\usepackage{mdframed}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PACOTES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mdfdefinestyle{ResearchQuestion}{%
+    linecolor=black,
+    outerlinewidth=8pt,
+    outermargin=\parindent,
+    skipabove=\baselineskip,
+    skipbelow=\baselineskip,
+    % roundcorner=20pt,
+    innertopmargin=8pt,
+    innerbottommargin=8pt,
+    innerrightmargin=16pt,
+    innerleftmargin=16pt,
+    % backgroundcolor=gray!50!white
+}
+
+% Define a new counter for research questions
+\newcounter{RQ}
+\renewcommand{\theRQ}{\arabic{RQ}}
+
+% Define a new counter for sub-questions
+\newcounter{SubRQ}[RQ] % Resets every time RQ is incremented
+\renewcommand{\theSubRQ}{\theRQ.\arabic{SubRQ}}
+
+% Define a new environment for research questions
+\newenvironment{researchquestion}{%
+  \refstepcounter{RQ}%
+  \begin{mdframed}[style=ResearchQuestion]\label{rq:\theRQ}%
+  \textbf{RQ\theRQ:}%
+}{%
+  \end{mdframed}%
+}
+
+% Define a new environment for sub research questions
+\newenvironment{subresearchquestion}{%
+  \refstepcounter{SubRQ}%
+  \begin{mdframed}[style=ResearchQuestion]\label{rq:\theSubRQ}%
+  \textbf{RQ\theSubRQ:}%
+}{%
+  \end{mdframed}%
+}
+
+% Define the label format for cleveref
+% #1 is the counter, #2/#3 are the start/end of the link
+\crefformat{RQ}{#2RQ#1#3}
+\Crefformat{RQ}{#2RQ#1#3}
+\crefformat{SubRQ}{#2RQ#1#3}
+\Crefformat{SubRQ}{#2RQ#1#3}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% METADADOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -108,10 +168,16 @@
 % armazenados nos metadados do PDF.
 \title{
     % Obrigatório nas duas línguas
-    titlept={Um Modelo Arquitetural Baseado em Métricas para Caracterizar
-Complexidade em Sistemas Inteligentes},
-    titleen={A Metrics-Based Architectural Model to Characterize Complexity
-on Machine Learning Systems},
+    titlept={
+      Um Modelo Arquitetural Orientado por Métricas
+      para Caracterizar a Complexidade de
+      Sistemas Baseados em Aprendizagem de Máquina
+    },
+    titleen={
+      A Metrics-Oriented Architectural Model
+      to Characterize Complexity on
+      Machine Learning-based Systems
+    },
     % Opcional, mas se houver deve existir nas duas línguas
     %subtitlept={um subtítulo},
     %subtitleen={a subtitle},
@@ -177,7 +243,7 @@ on Machine Learning Systems},
   % observe que apenas TCCs sob alguma licença Creative Commons serão
   % acrescentados ao BDTA. Se você tem alguma intenção de publicar o
   % trabalho comercialmente no futuro, sugerimos a licença CC-BY-NC-ND.
-  direitos={CC-BY}, % Creative Commons Attribution 4.0 International License
+  direitos={CC-BY-NC}, % Creative Commons Attribution 4.0 International License
   %direitos={Autorizo a reprodução e divulgação total ou parcial
   %          deste trabalho, por qualquer meio convencional ou
   %          eletrônico, para fins de estudo e pesquisa, desde que
@@ -206,13 +272,29 @@ on Machine Learning Systems},
 
 \maketitle % capa e folha de rosto
 
-%%%%%%%%%%%%%%%% DEDICATÓRIA, AGRADECIMENTOS, RESUMO/ABSTRACT %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DEDICATÓRIA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{dedicatoria}
+\texten{
+To my parents, Alex and Elisabete, who supported me in every step
+of this epic academic journey.
+} \\
+
+\bigskip
+
+\textbr{
+Para os meus pais, Alex e Elisabete, que me apoiaram em cada passo
+desse épica jornada acadêmica.
+} \\
+
+\vspace{2cm}
+
 % Esta seção é opcional e fica numa página separada; ela pode ser usada para
 % uma dedicatória ou epígrafe.
 \epigrafe{If you can not measure it, you can not improve it.}{Lord Kelvin}
 \end{dedicatoria}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% AGRADECIMENTOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Reinicia o contador de páginas (a próxima página recebe o número "i") para
 % que a página da dedicatória não seja contada.
@@ -224,6 +306,7 @@ on Machine Learning Systems},
 % epígrafes em todos os capítulos. O comando "\chapter*" faz esta seção
 % não ser incluída no sumário.
 \chapter*{Acknowledgements}
+
 \epigrafe{%
 By three methods we may learn wisdom: \break
 first, by reflection, which is noblest; \break
@@ -231,15 +314,15 @@ second, by imitation, which is easiest; \break
 and third by experience, which is the bitterest.
 }{Confucius}
 
-Texto texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto. Texto opcional.
+text text text text text text text text text text text text text
+text text text text text text text text text text text text text
+text text text text text text text text text text text text text
+text text text text. text optional.
 
-% \input{conteudo/resumoabstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% RESUMO/ABSTRACT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \input{abstracts/en-US}
 \input{abstracts/pt-BR}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% LISTAS DE FIGURAS ETC. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -275,9 +358,21 @@ texto texto texto texto. Texto opcional.
 \disablenewpage{\chapter*{List of Abbreviations}}
 
 \begin{tabular}{rll}
-   URL & Uniform Resource Locator (\emph{Localizador Uniforme de Recursos})      \\
-   IME & Institute of Mathematics and Statistics (\emph{Instituto de Matemática e Estatística}) \\
-   USP & University of São Paulo (\emph{Universidade de São Paulo})
+   URL   & Uniform Resource Locator \\
+         & \EnToBr{Localizador Uniforme de Recursos} \\
+   JADS  & Jheronimus Academy of Data Science \\
+         & \EnToBr{Academia Jheronimus de Ciência de Dados} \\
+   TUe   & Eindhoven University of Technology \\
+         & \EnToBr{Universidade Técnica de Eindhoven} \\
+   TiU   & Tilburg University \\
+         & \EnToBr{Universidade de Tilburgo} \\
+   IME   & Institute of Mathematics and Statistics \\
+         & \EnToBr{Instituto de Matemática e Estatística} \\
+   USP   & University of São Paulo \\
+         & \EnToBr{Universidade de São Paulo} \\
+   SMART & Specific, Measurable, Achievable, Relevant, and Time-Bound \\
+         & \EnToBr{Específico, Mensurável, Atingível, Relevante, e com
+           Tempo Limitado} \\
 \end{tabular}
 
 %\chapter*{List of Symbols}
@@ -347,9 +442,11 @@ texto texto texto texto. Texto opcional.
 \onehalfspacing
 
 \input{chapters/01-introduction}
-\input{chapters/02-fundamentals}
-\input{chapters/03-objectives}
-\input{chapters/04-research-plan}
+\input{chapters/02-machine-learning-engineering}
+\input{chapters/03-measuring-complexity}
+\input{chapters/04-research-methodology}
+\input{chapters/05-work-plan}
+% \input{chapters/X-the-spira-project}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% APÊNDICES E ANEXOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
