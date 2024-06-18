@@ -75,6 +75,7 @@
 \newcommand{\BrToEn}[1]{\textit{\texten{#1}}}
 
 % Bibliografia
+% https://tex.stackexchange.com/questions/23117/biblatex-get-rid-of-issn-urls-and-dois-in-references
 \usepackage[
   %style=extras/plainnat-ime, % variante de autor-data, similar a plainnat
   %style=alphabetic, % similar a alpha
@@ -82,7 +83,11 @@
   %style=authoryear-comp, % autor-data "padrão" do biblatex
   %style=apa, % variante de autor-data, muito usado
   %style=abnt,
+  url=false,
+  isbn=false,
 ]{biblatex}
+
+\newcommand{\Quote}[1]{\textit{``#1''}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PACOTES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -91,21 +96,25 @@
 % mdframed: create boxes around text
 \usepackage{mdframed}
 
+% tikz: draw diagrams
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PACOTES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% RESEARCH QUESTIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \mdfdefinestyle{ResearchQuestion}{%
     linecolor=black,
     outerlinewidth=8pt,
-    outermargin=\parindent,
+    % outermargin=\parindent,
     skipabove=\baselineskip,
     skipbelow=\baselineskip,
     % roundcorner=20pt,
-    innertopmargin=8pt,
-    innerbottommargin=8pt,
-    innerrightmargin=16pt,
-    innerleftmargin=16pt,
+    innertopmargin=12pt,
+    innerbottommargin=12pt,
+    innerrightmargin=24pt,
+    innerleftmargin=24pt,
     % backgroundcolor=gray!50!white
 }
 
@@ -135,12 +144,187 @@
   \end{mdframed}%
 }
 
+% Revisiting a Research Question
+\newenvironment{revisitresearchquestion}[1]{%
+  \begin{mdframed}[style=ResearchQuestion]
+  \textbf{RQ#1:}%
+}{%
+  \end{mdframed}%
+}
+
 % Define the label format for cleveref
 % #1 is the counter, #2/#3 are the start/end of the link
 \crefformat{RQ}{#2RQ#1#3}
 \Crefformat{RQ}{#2RQ#1#3}
 \crefformat{SubRQ}{#2RQ#1#3}
 \Crefformat{SubRQ}{#2RQ#1#3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PUBLICATIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mdfdefinestyle{ExpectedResult}{%
+    linecolor=black,
+    outerlinewidth=8pt,
+    % outermargin=\parindent,
+    skipabove=\baselineskip,
+    skipbelow=\baselineskip,
+    % roundcorner=20pt,
+    innertopmargin=12pt,
+    innerbottommargin=12pt,
+    innerrightmargin=24pt,
+    innerleftmargin=24pt,
+    % backgroundcolor=gray!50!white
+}
+
+% Define a new counter for publications
+\newcounter{ER}
+\renewcommand{\theER}{\arabic{ER}}
+
+% Define a new environment for publications
+\newenvironment{expectedresult}{%
+  \refstepcounter{ER}%
+  \begin{mdframed}[style=ExpectedResult]\label{er:\theER}%
+  \textbf{ER\theER:}%
+}{%
+  \end{mdframed}%
+}
+
+% Define the label format for cleveref
+% #1 is the counter, #2/#3 are the start/end of the link
+\crefformat{ER}{#2ER#1#3}
+\Crefformat{ER}{#2ER#1#3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SUPERVISIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mdfdefinestyle{Supervision}{%
+    linecolor=black,
+    outerlinewidth=8pt,
+    % outermargin=\parindent,
+    % skipabove=\parskip\parskip,
+    % skipbelow=\baselineskip,
+    % roundcorner=20pt,
+    innertopmargin=12pt,
+    innerbottommargin=12pt,
+    innerrightmargin=24pt,
+    innerleftmargin=24pt,
+    % backgroundcolor=gray!50!white
+}
+
+% Define a new environment for publications
+\newenvironment{supervision}{%
+  % \vspace{\baselineskip}%
+  \vspace{\parskip}%
+  \setlength{\parskip}{0pt}%
+  \begin{mdframed}[style=Supervision]%
+}{%
+  \end{mdframed}%
+  % \vspace{\parskip}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% METHODOLOGY PARTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Define a new counter for phases
+\newcounter{MethPhase}
+\renewcommand{\theMethPhase}{\arabic{MethPhase}}
+
+% Define a new counter for steps
+\newcounter{MethStep}[MethPhase] % Resets every time MethPhase is incremented
+\renewcommand{\theMethStep}{\theMethPhase.\arabic{MethStep}}
+
+% Define new methodology phase
+\newcommand{\MethodologyPhase}{\refstepcounter{MethPhase}\label{phase:\theMethPhase}}
+
+% Define new methodology step
+\newcommand{\MethodologyStep}{\refstepcounter{MethStep}\label{step:\theMethStep}}
+
+% Define the label format for cleveref
+% #1 is the counter, #2/#3 are the start/end of the link
+\crefname{MethPhase}{phase}{phases}
+\Crefname{MethPhase}{Phase}{Phases}
+\crefname{MethStep}{step}{steps}
+\Crefname{MethStep}{Step}{Steps}
+% \crefformat{MethPhase}{#2phase #1#3}
+% \Crefformat{MethPhase}{#2Phase #1#3}
+% \crefformat{MethStep}{#2step #1#3}
+% \Crefformat{MethStep}{#2Step #1#3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAPTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\crule[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+
+% Drawio Component Colors
+\definecolor{drawio-blue}{HTML}{1ba1e2} %
+\definecolor{drawio-gray}{HTML}{647687} %
+\definecolor{drawio-green}{HTML}{6d8764} %
+\definecolor{drawio-orange}{HTML}{fa6800} %
+\definecolor{drawio-pink}{HTML}{99004D} %
+\definecolor{drawio-purple}{HTML}{76608a} %
+\definecolor{drawio-red}{HTML}{e51400} %
+\definecolor{drawio-white}{HTML}{f9f7ed} % 
+\definecolor{drawio-black}{HTML}{36393d} % 
+\definecolor{drawio-yellow}{HTML}{e3c800} %
+
+% Drawio Label Colors
+\definecolor{drawio-violet}{HTML}{6a00ff} %
+\definecolor{drawio-magenta}{HTML}{dd0073} %
+\definecolor{drawio-moss}{HTML}{008a00} %
+
+% #1: color
+\newcommand{\TikzSkewedSquare}[1][black]{%
+  \tikz[baseline] {\draw[xslant=tan(12), transform shape, black, fill={#1}] (0,0) rectangle (1.5ex,1.5ex);}%
+}
+% #1: color
+\newcommand{\TikzSkewedCircle}[1][black]{%
+  \tikz[baseline] {\draw[xslant=tan(12), yshift=0.75ex, anchor=south, transform shape, black, fill={#1}] (0,0) circle (0.75ex);}%
+}
+% \newcommand{\TikzTriangleArrow}{%
+%   \tikz[baseline=-0.5ex]\draw[->] (0,0) -- (1,0);%
+% }
+
+% #1: color, #2: color, #3: colored text
+\newcommand{\LegendColoredSquare}[3]{%
+  \textcolor{#1}{#3}~\TikzSkewedSquare[#2]%
+}
+% #1: color, #2: color, #3: colored text
+\newcommand{\LegendColoredCircle}[3]{%
+  \textcolor{#1}{#3}~\TikzSkewedCircle[#2]%
+}
+
+% #1: color, #2: text
+\newcommand{\LegendColoredComponent}[2]{%
+  \LegendColoredSquare{drawio-#1}{drawio-#1}{#2}%
+}
+% #1: text
+\newcommand{\LegendBWComponent}[1]{%
+  \LegendColoredSquare{drawio-black}{drawio-white}{#1}%
+}
+% #1: color, #2: text
+\newcommand{\LegendColoredLabel}[2]{%
+  \LegendColoredCircle{drawio-#1}{drawio-#1}{#2}%
+}
+% \newcommand{\LegendTriangleArrow}{\TikzTriangleArrow}
+
+% Color name with same color
+\newcommand{\ColorBlue}{\textcolor{NavyBlue}{blue}}
+\newcommand{\ColorGreen}{\textcolor{ForestGreen}{green}}
+
+% #1: number, #2: text
+\newcommand{\LegendService}[2]{%
+  \textcolor{drawio-violet}{\mbox{#2~(#1)}}%
+}
+\newcommand{\LegendPipeline}[2]{%
+  \textcolor{drawio-moss}{\mbox{#2~(#1)}}%
+}
+\newcommand{\LegendDataStore}[2]{%
+  \textcolor{drawio-magenta}{\mbox{#2~(#1)}}%
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% METADADOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -171,12 +355,12 @@
     titlept={
       Um Modelo Arquitetural Orientado por Métricas
       para Caracterizar a Complexidade de
-      Sistemas Baseados em Aprendizagem de Máquina
+      Sistemas Baseados em Aprendizagem de Máquina%
     },
     titleen={
       A Metrics-Oriented Architectural Model
       to Characterize Complexity on
-      Machine Learning-based Systems
+      Machine Learning-Enabled Systems%
     },
     % Opcional, mas se houver deve existir nas duas línguas
     %subtitlept={um subtítulo},
@@ -253,6 +437,15 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SPACING %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\interlinepenalty=10000
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%% AQUI COMEÇA O CONTEÚDO DE FATO %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -291,7 +484,7 @@ desse épica jornada acadêmica.
 
 % Esta seção é opcional e fica numa página separada; ela pode ser usada para
 % uma dedicatória ou epígrafe.
-\epigrafe{If you can not measure it, you can not improve it.}{Lord Kelvin}
+\epigrafe{If you cannot measure it, you cannot improve it.}{Lord Kelvin}
 \end{dedicatoria}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% AGRADECIMENTOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -314,10 +507,65 @@ second, by imitation, which is easiest; \break
 and third by experience, which is the bitterest.
 }{Confucius}
 
-text text text text text text text text text text text text text
-text text text text text text text text text text text text text
-text text text text text text text text text text text text text
-text text text text. text optional.
+``It takes a tribe to raise a child''. I like to paraphrase this adage by
+saying, ``It takes a lab to produce a PhD''. My PhD project is the result
+of years of collaboration with friends from all around the world and all
+backgrounds. Science is a group effort, and thus my results come from
+learning from so many people.
+
+I would like to thank all my friends, students, and professors at the
+University of São Paulo. For years, it was my dream university. Now,
+it has been my second home since 2012. There, I completed my bachelor's
+and master's degree in Computer Science, and I have the pleasure of
+pursuing my PhD. I cannot fathom who I would be without all those
+years there. In particular, I would like to thank my supervisor,
+Prof. Alfredo Goldman, whom I have known for +10 years.
+This project would not be possible without you.
+
+I also leave a special thanks to my dear friends from BCC 2012,
+and all the people I met thanks to USPCodeLab. I am lucky I have
+made so many friends that I cannot possibly list them all here.
+I leave some special thanks to Victor Portella, Karina Awoki, and
+Thatiane Rosa. You are always there to support me when I need
+friends who can understand the hardships of being a PhD.
+
+My professional career was key for making me decide on this research
+theme. So many thanks to all the colleagues and friends I made at Elo7,
+where I could learn in practice what it means to be a Machine Learning
+Engineer. In that sense, I leave some special thanks to Ígor Bonadio
+(my former boss), Samara Alves (my closest coworker), and Junior Kochi
+(my fellow principal engineer). All the experiences we shared together
+drive much of my thoughts during this research. Moreover, so many thanks
+to my former team ``Redwyne'', in particular Vinícius Resende, Vinícius
+Agostini, and Fernando Freire. All those hours developing ML-enabled
+systems gave me the experience to make this PhD. Finally, thanks to my
+D\&D group ``Dragões Violetas'', who started in 2020 at Elo7, for the
+many adventures we shared along the way. This is a hobby
+that helped me to hold myself strong during some of the harshest times.
+
+Since 2023, I moved to the Netherlands, and the Jheronimus Academy of
+Data Science (JADS) become my new home -- literally and figuratively.
+I am thankful to JADS for the opportunity of coming to the Netherlands,
+making my dream of studying outside Brazil a reality. Moreover, I am glad
+JADS helped me to learn what it means to be a full-time researcher.
+Many thanks to Prof. Damian Tamburri (my co-supervisor), Prof. Willem-Jan
+van del Heuvel (our lab manager), Prof. Indika Kumara (a great source of
+inspiration). I am becoming a better academic thanks to your influence.
+Moreover, special thanks to my colleagues, Stefan Driesden, Nemania Borovitz,
+and all other teammates, who helped to make JADS such an enjoyable
+environment. Thanks to you, the Netherlands became my new home
+outside of home.
+
+Last, but definitively not least, I can only thank my family.
+My parents, Alex and Elisabete, have supported my academic journey since...
+forever. This PhD is as much mine as is yours. To everyone else in my
+extended family -- uncles and aunts, so many cousins --, thanks for
+being so patient for the many weekends I could not be there because
+I was studying. I am always thinking about you. Certainly, I leave
+my special thanks to my family members who are no longer here with us.
+Your memories live in who I came to be. In particular, I miss my grampa
+Eduardo Ferreira, who was by my side during many weekends of study.
+I wish you were here to see the man I came to be.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% RESUMO/ABSTRACT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -355,43 +603,55 @@ text text text text. text optional.
 %%%%% Listas criadas manualmente
 
 %\chapter*{List of Abbreviations}
-\disablenewpage{\chapter*{List of Abbreviations}}
+\chapter*{List of Abbreviations}
 
 \begin{tabular}{rll}
-   URL   & Uniform Resource Locator \\
-         & \EnToBr{Localizador Uniforme de Recursos} \\
-   JADS  & Jheronimus Academy of Data Science \\
-         & \EnToBr{Academia Jheronimus de Ciência de Dados} \\
-   TUe   & Eindhoven University of Technology \\
-         & \EnToBr{Universidade Técnica de Eindhoven} \\
-   TiU   & Tilburg University \\
-         & \EnToBr{Universidade de Tilburgo} \\
+   CI    & Continuous Integration \\
+         & \EnToBr{Integração Contínua} \\
+   CD    & Continuous Delivery \\
+         & \EnToBr{Entrega Contínua} \\
+   CD4ML & Continuous Delivery for Machine Learning \\
+         & \EnToBr{Entrega Contínua para Aprendizado de Máquina} \\
+   DS    & Data Science \\
+         & \EnToBr{Ciência de Dados} \\
    IME   & Institute of Mathematics and Statistics \\
          & \EnToBr{Instituto de Matemática e Estatística} \\
+   ISE   & Intelligent Software Engineering \\
+         & \EnToBr{Engenharia de Software Inteligente} \\
+   JADS  & Jheronimus Academy of Data Science \\
+         & \EnToBr{Academia Jheronimus de Ciência de Dados} \\
+   MLR   & Multivocal Literature Review \\
+         & \EnToBr{Revisão Multivocal de Literatura} \\
+   SE4AI & Software Engineering for Artificial Intelligence \\
+         & \EnToBr{Engenharia de Software para Inteligência Artificial} \\
+   SE4ML & Software Engineering for Machine Learning \\
+         & \EnToBr{Engenharia de Software para Aprendizado de Máquina} \\
+   SMART & Specific, Measurable, Achievable, Relevant, and Time-Bound \\
+         & \EnToBr{Específico, Mensurável, Atingível, Relevante, e com Tempo Limitado} \\
+   SLR   & Systematic Literature Review \\
+         & \EnToBr{Revisão Sistemática de Literatura} \\
+   TiU   & Tilburg University \\
+         & \EnToBr{Universidade de Tilburgo} \\
+   TUe   & Eindhoven University of Technology \\
+         & \EnToBr{Universidade Técnica de Eindhoven} \\
    USP   & University of São Paulo \\
          & \EnToBr{Universidade de São Paulo} \\
-   SMART & Specific, Measurable, Achievable, Relevant, and Time-Bound \\
-         & \EnToBr{Específico, Mensurável, Atingível, Relevante, e com
-           Tempo Limitado} \\
 \end{tabular}
 
 %\chapter*{List of Symbols}
-\disablenewpage{\chapter*{List of Symbols}}
+% \disablenewpage{\chapter*{List of Symbols}}
 
-\begin{tabular}{rl}
-  $\omega$ & Frequência angular\\
-    $\psi$ & Função de análise \emph{wavelet}\\
-    $\Psi$ & Transformada de Fourier de $\psi$\\
-\end{tabular}
-
-% Quebra de página manual
-\clearpage
+% \begin{tabular}{rl}
+%   $\omega$ & Frequência angular\\
+%     $\psi$ & Função de análise \emph{wavelet}\\
+%     $\Psi$ & Transformada de Fourier de $\psi$\\
+% \end{tabular}
 
 %%%%% Listas criadas automaticamente
 
 % Você pode escolher se quer ou não permitir a quebra de página
-%\listoffigures
-\disablenewpage{\listoffigures}
+\listoffigures
+% \disablenewpage{\listoffigures}
 
 % Você pode escolher se quer ou não permitir a quebra de página
 %\listoftables
@@ -401,7 +661,7 @@ text text text text. text optional.
 % definimos o novo tipo de float "program" (em utils.tex)
 % Você pode escolher se quer ou não permitir a quebra de página
 %\listof{program}{\programlistname}
-\disablenewpage{\listof{program}{\programlistname}}
+% \disablenewpage{\listof{program}{\programlistname}}
 
 % Sumário (obrigatório)
 \tableofcontents
@@ -427,7 +687,6 @@ text text text text. text optional.
 \index{Palavras estrangeiras|see{Língua estrangeira}}
 \index{Floats!Algoritmo|see{Floats, Ordem}}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAPÍTULOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Aqui vai o conteúdo principal do trabalho, ou seja, os capítulos que compõem
@@ -442,11 +701,11 @@ text text text text. text optional.
 \onehalfspacing
 
 \input{chapters/01-introduction}
-\input{chapters/02-machine-learning-engineering}
-\input{chapters/03-measuring-complexity}
+\input{chapters/02-ml-enabled-systems}
+\input{chapters/03-the-spira-project}
 \input{chapters/04-research-methodology}
 \input{chapters/05-work-plan}
-% \input{chapters/X-the-spira-project}
+% \input{chapters/X-measuring-complexity}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% APÊNDICES E ANEXOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -485,25 +744,25 @@ text text text text. text optional.
 % só há apêndices, sem anexos, provavelmente não é necessário.
 \addappheadtotoc
 
-%\input{conteudo/apendice-exemplo-pseudocodigo}
+\input{appendices/A-related-activities}
 \par
 
-%%%% Anexos %%%%
+% %%%% Anexos %%%%
 
-\makeatletter
-\if@openright\cleardoublepage\else\clearpage\fi
-\makeatother
+% \makeatletter
+% \if@openright\cleardoublepage\else\clearpage\fi
+% \makeatother
 
-\pagestyle{appendix} % repete o anterior, caso você não use apêndices
+% \pagestyle{appendix} % repete o anterior, caso você não use apêndices
 
-\annex
+% \annex
 
-% \addappheadtotoc acrescenta a palavra "Anexo" ao sumário; se
-% só há anexos, sem apêndices, provavelmente não é necessário.
-\addappheadtotoc
+% % \addappheadtotoc acrescenta a palavra "Anexo" ao sumário; se
+% % só há anexos, sem apêndices, provavelmente não é necessário.
+% \addappheadtotoc
 
-%\input{conteudo/anexo-exemplo-faq}
-\par
+% %\input{conteudo/anexo-exemplo-faq}
+% \par
 
 
 %%%%%%%%%%%%%%% SEÇÕES FINAIS (BIBLIOGRAFIA E ÍNDICE REMISSIVO) %%%%%%%%%%%%%%%%
@@ -517,13 +776,12 @@ text text text text. text optional.
 \addtocontents{toc}{\vspace{2\baselineskip plus .5\baselineskip minus .5\baselineskip}}
 
 % A bibliografia é obrigatória
-
 \printbibliography[
   title=\refname\label{bibliografia}, % "Referências", recomendado pela ABNT
   %title=\bibname\label{bibliografia}, % "Bibliografia"
   heading=bibintoc, % Inclui a bibliografia no sumário
 ]
 
-\printindex % imprime o índice remissivo no documento (opcional)
+% \printindex % imprime o índice remissivo no documento (opcional)
 
 \end{document}

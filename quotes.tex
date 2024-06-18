@@ -1,0 +1,1112 @@
+% Mentions of the term "complexity" that support the research gap
+% proposed by the research
+
+% => research gap
+% => have train & inference
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Alves2024PracticesReview}
+% Practices for Managing Machine Learning Products: A Multivocal Literature Review
+
+"The ML system is, therefore, more complex than standard software [21].
+In addition to having source code that executes instructions necessary for the
+system to function, there are two additional artifacts to the ML systems:
+the trained model and the training data. Managing and maintaining independent
+delivery pipelines for source code, models, and data are essential to guarantee
+the accuracy and reliability of the ML system in the production environment."
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Amershi2019SoftwareStudy}
+% Software Engineering for Machine Learning: A Case Study
+
+"The amount of effort and rigor it takes to discover, source, manage,
+and version data is inherently more complex and different than doing
+the same with software code." (pg.1)
+
+"Machine learning models can be “entangled” in complex ways that cause them
+to affect one another during training and tuning, even if the software teams
+building them intended for them to remain isolated from one another" (pg.2)
+
+% => pipelines
+"This workflow can become even more complex if the system is integrative,
+containing multiple ML components which interact together in complex and
+unexpected ways" (pg.7)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Nguyen-Duc2020AIndustry}
+% A Multiple Case Study of Artificial Intelligent System Development in Industry
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Belani2019RequirementsSystems}
+% Requirements engineering challenges in building AI-based complex systems.
+
+"Building AI-based complex systems surely goes beyond using specific AI
+algorithms, and the development itself is becoming more complex since data
+needed and algorithms implemented become dependent. The system generally
+consists of a variety of subsystems, some of which are data-centric while others
+will be model-driven"
+
+"This seems logical because introducing ML subsystem into the complex system
+demands interventions to the SE processes on many levels, especially when
+dealing with datasets availability, ML models versioning and the whole system
+performance, including dependence on the hardware. Still, introducing the ML
+subsystem as a “black-box” element into the SE processes seems to violate the
+traceability property of system requirements, concerned with recovering the
+source of requirements and predicting the effects of requirements, which is
+fundamental for impact analysis when requirements change."
+
+"Just as software engineering is primarily about the code that forms shipping
+software, ML is all about the data that powers learning models. Software
+engineers prefer to design and build systems which are elegant, abstract,
+modular, and simple. By contrast, the data used in machine learning are vo-
+luminous, context-specific, heterogeneous, and often complex to describe. These
+differences result in difficult problems when ML models are integrated into
+software systems at scale." (pg.8)
+
+"if ML engineers want to change which data values are collected, they must wait
+for the engineering systems to be updated, deployed, and propagated before new
+data can arrive." (pg.9)
+
+"If an engineer wants to apply the model on a similar domain as the data it was
+originally trained on, reusing it is straightforward. However, more significant
+changes are needed when one needs to run the model on a different domain or use
+a slightly different input format." (pg.9)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Benton2020MachineApplications}
+% Machine Learning Systems and Intelligent Applications
+
+% => pipelines
+"Machine learning systems incorporate, at a minimum, both training and inference
+pipelines and are thus multicomponent and (often) distributed systems that must
+deal with processed data from many sources and raw data from
+potentially uncooperative users." (pg.3)
+
+% => have train & inference
+"For example, configuring and orchestrating experiments and training pipelines
+is analogous to configuring and orchestrating conventional build pipelines,
+but the impact of a machine learning pipeline’s configuration can be dramatic
+on the overall performance of a machine learning system." (pg.3)
+
+% => pipelines
+"The technical aspect subsists in the challenge of managing, monitoring, and
+isolating a complex system with at least one opaque box in the middle—since
+there are so many places in which machine learning systems can go wrong, we need
+a single place to manage and observe the behavior of every component and their
+interactions." (pg.4)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Chadli2024TheStudy}
+% The Environmental Cost of Engineering Machine Learning-Enabled Systems:
+% A Mapping Study
+
+"Large ML models repeatedly process vast amounts of data through complex
+algorithms–often requiring multiple iterations to optimize model parameters
+for accuracy."
+
+"Therefore, there has been a growing call within the artificial intelligence
+(AI) community to emphasize the mitigation of environmental footprint linked
+to the development, deployment, and maintenance of AI models, especially in
+industrial contexts [53]"
+
+"Nevertheless, the conventional DevOps approach is not viable for ML-Enabled
+Systems (MLES) due to the unique challenges associated with such systems
+(e.g., data dependencies, boundary erosion, continuous learning) that require
+specialized deployment and maintenance processes"
+
+% => pipelines
+"Machine Learning-Enabled Systems (MLES): ML revolutionizes the software
+industry, integrating AI into everyday applications as MLES. These systems
+improve software functionality by incorporating ML components. However,
+transitioning from a prototype ML model to a robust, scalable production system
+poses a significant challenge. Despite ML’s popularity, deploying MLES often
+faces a high failure rate, with nearly 90\% failing to reach production [45].
+The MLES life cycle progresses through a coordinated sequence of interconnected
+processes. Key processes include configuration, data collection, feature
+extraction, ML code, data verification, ML resources, analysis tools, serving
+infrastructure, and monitoring [54]."
+
+"To handle challenges in ML models tied to changing datasets, MLOps introduces
+Continuous Training (CT). This means models are automatically updated based on
+new data, ensuring they stay effective in real-world sce- narios [50]"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Diaz-De-Arcaya2023ASurvey}
+% A Joint Study of the Challenges, Opportunities, and Roadmap of MLOps and AIOps: A Systematic Survey
+% type:survey
+
+"Finally, the complexity of ML workflows forces operations engineers to
+have a high degree of application and platform expertise to size, provision,
+and operate the required resources" (pg.11)
+
+% => research gap
+"For instance, the complexity of AI designs represents a bigger challenge [39],
+such as in terms of modularization [5], than traditional software components
+and requires a working understanding of ML principles and proficient technical
+expertise [43]" (pg.11)
+
+"data discovery, management, and versioning are more complex in ML-based
+scenarios" (pg.11)
+
+"The Big Data paradigm [4, 14, 30, 40, 62] adds yet another layer of complexity
+to data management in ML projects: aspects such as task distribution and data
+movement [62], or batch processing [14], become even more relevant in these scenarios.
+In addition, the underlying complexity of ML and Big Data workflows resorts
+to time-consuming, convoluted coding [4]" (pg.11)
+
+"Similarly, the complexity of integrating big data, machine learning,
+and IoT solutions has raised attention towards the training and inference
+orchestration of the underlying ML solutions" (pg.16)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Foidl2024DataDevelopers}
+% Data Pipeline Quality: Influencing Factors, Root Causes of Data-Related Issues, and Processing Problem Areas for Developers
+% type:survey
+"Given the increasing importance and complexity of data processing,
+data pipelines are nowadays even treated as complete software
+systems with their own ecosystem comprising several technologies and
+software tools (Koivisto, 2019). The primary purpose of this set of
+complex and interrelated software bundles is to enable efficient data
+processing, transfer, and storage, control all data operations, and
+orchestrate the entire data flow from source to destination." (pg.2)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Giray2021AChallenges}
+% A Software Engineering Perspective on Engineering Machine Learning Systems: State of the Art and Challenges
+
+"ML systems engineering in real-world settings is challenging
+since it adds additional complexity to engineering ‘‘traditional’’
+software." (pg.01)
+
+% => research gap
+"As these examples show, the industry is calling for action to resolve
+the challenges of engineering ML systems and to propose new techniques
+to cope with the additional complexity of ML systems." (pg.04)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Granlund2021MLOpsCases}
+% MLOps Challenges in Multi-Organization Setup: Experiences from Two Real-World Cases
+
+"To summarize, continuous deployment of ML features is a complex procedure
+that involves taking into account application code, model used for prediction,
+and data used to develop the model."
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Hilllaz2016TrialsStudy}
+% Trials and Tribulations of Developers of Intelligent Systems: A Field Study
+
+"The issues our participants described suggest an important need for explicit
+attention to software lifecycle phases—they show that developing intelligent
+applications is not simply a matter of creating an application and occasionally
+calling ML library routines. For intelligent applications, “regular” software
+engineering activities and skills apply, of course, but our participants
+revealed that the skills needed for nurturing an intelligent application through
+its birth and lifecycle go far beyond this set."
+
+"Compounding these problems, these experienced ML developers described many
+cases in which developing ML-based systems required skills held only by certain
+“high priests”. Given such complexity, perhaps it is not so surprising that
+these experienced developers described debugging such systems as something akin
+to magic and even voodoo."
+
+"Not being able to isolate the impact of a specific change anywhere in the
+system of dependencies could be a reason that our practitioners so often
+resorted to ad hoc practices like trial and error and rules of thumb."
+
+% => research gap (discussions not objective)
+"Perhaps deriving these systematic methods from ML experts' practices would
+provide a starting place for an ML-specialized software engineering to meet
+this need."
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{John2021ArchitectingLiterature}
+% Architecting AI Deployment:
+% A Systematic Review of State-of-the-Art and State-of-Practice Literature
+
+"According to the findings from the literature, they are grouped into five phases
+i.e. Design, Integration, Deployment, Operation and Evolution."
+
+"The overall framework is structured into five phases and consists
+of two tasks for each phase. They are:
+(a) Design - Validation \& Tracking
+(b) Integration - Resource Discovery \& Rewrite/Package
+(c) Deployment - Target Environment \& Launching
+(d) Operation - Inference \& Monitoring
+(e) Evolution - Retrain \& Redeploy."
+
+"When the models are properly validated [26] and offer confidence in results,
+the model is ready for placing into production."
+"Models, dependencies, artifacts, etc. need to be tracked and versioned to
+ensure reproducibility"
+
+"Models can be incorporated into the application logic in two primary ways.
+These are:
+(a) Rewrite models from the data analysis language (for instance, R or Python)
+to industrial development language (for instance, Java or C++). Models are often
+rewritten to integrate into applications or reports, or to share knowledge and
+predictions with analytical products.
+(b) Provide web-interface to the models. In the latter case, the model images
+are packaged with the required frameworks and libraries. One of the most popular
+technologies for packaging is containerization."
+
+"Introducing the model into production demands close collaboration between data
+scientists, ML engineers, engineering teams, data engineers, domain experts,
+infrastructure professionals, etc."
+
+"Companies perceive operationalization as the most challenging phase. Ensure
+proper deployment of models, inference pipelines, monitoring and event logging
+mechanisms before serving models"
+
+"In this phase, the deployed model consumes raw data to serve either batch or
+real-time inference requests"
+
+"The deployed model undergoes continuous monitoring to determine data drifts,
+concept drifts, returned errors from model, etc. [28]. As model performance
+degrades, introduce roll back mechanisms for quicker recovery"
+
+"The evolution phase deals with subsequent model deployment. As the models are
+placed in production, performance degrades over time"
+
+"Instead of retraining the entire model, updating the model with the latest
+information [14] is a good option. Techniques such as A/B test [12,29] and
+multi-armed bandit [28] can be selected for deploying different versions of the
+same model to determine the best performing model. On the other hand, blue/green
+deployments can be used to deploy new model versions in production [29]."
+
+"Support among Professionals: Both SLR and GLR sources suggest that successful
+deployment of ML/DL models requires support from data scientists and other
+experts such as data engineers, domain experts, infrastructure professionals
+and end-users."
+"Use of Containerization Technologies: Containerization has been identified
+as the most popular packaging technology. Implementation of the same model in
+different frameworks result in a loss of time and effort."
+"A/B Test: Once the model is deployed into production, it is obvious that
+both SLR and GLR sources recommend adoption of A/B testing technique to
+deploy multiple versions of the best performing model."
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{John2021TowardsModel}
+% Towards MLOps: A Framework and Maturity Model
+
+"Continuous software engineering (SE) refers to iterative software development
+and related aspects like continuous integration, continuous delivery,
+continuous testing and continuous deployment."
+
+"From the perspective of CD, processed datasets and trained models are
+automatically and continuously delivered by data scientists to ML systems
+engineers. From the perspective of continuous training (CT), introduction of new
+data and model performance degradation require a trigger to retrain the model or
+improve model performance through online methods. In addition, appropriate
+monitoring facilities ensure proper execution of operations."
+
+"To unify the development and operation of ML systems, MLOps [5] extends DevOps
+principles [15]." (pg.2)
+
+"For the SLR and the GLR, we used the search query as “MLOps” OR “Machine
+Learning Operations” and restricted the search to the period between January 1,
+2015 and March 31, 2021. The time interval was chosen because the term MLOps is
+prevalent after the concept “Hidden Technical Debt in Machine Learning Systems”
+[6] in 2015."
+
+"Aggregate heterogeneous data from different data sources [32] [31] [41],
+preprocessing [27] and extracting relevant features are necessary to provide
+data for ML development."
+
+% => pipelines
+"After versioning, the code is stored in the code repository [42] [23]. The
+model repository [39] keeps track of the models that will be used in production,
+and the metadata repository contains all the information about the models (e.g.,
+hyperparameter information)."
+
+"When deploying a model to production, it has to be integrated with other models
+as well as existing applications [30] [41]."
+
+% => pipelines
+"Despite the fact that training is often a batch process, the inferences can be
+REST endpoint/custom code, streaming engine, micro-batch, etc. [35]. When
+performance drops, monitor the model [41] and enable the data feedback loop [41]
+to retrain the models ."
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Kolltveit2022OperationalizingReview}
+% Operationalizing Machine Learning Models - A Systematic Literature Review
+
+% HAS A PIPELINE ARCHITECTURE FIGURE
+
+"Operationalization, in the context of this paper, consists of taking a trained
+and evaluated ML model to a serving state in the intended production
+environment, including necessary support functions, such as monitoring."
+
+"While traditional SE for non-ML systems is a mature and well-understood field,
+software engineering for ML systems is still a young and immature knowledge
+area."
+
+"The additional data dependency is one of the factors contributing to the fact
+that ML systems require a great amount of supporting infrastructure."
+
+"Some motivating factors for automation are shortening the time to delivery,
+increasing reproducibility and reducing time spent on automatable processes"
+
+% => Server
+"Packaging models in containers is a commonly reported method of integration, in
+which the model is accessible through representation state transfer (REST) or
+remote procedure call (RPC) interfaces"
+"The model could also be packaged in a format specific to an end-to-end
+framework such as MLflow5 [10]. The model may be integrated directly into the
+application code [19, 29, 45], traditionally first having to be rewritten for
+production [21]."
+"Models intended for batch predictions may simply be plugged into a computing
+pipeline such as Apache Spark, computing predictions and storing them in a
+database or data warehouse"
+
+% => Server
+"Models are commonly made available for serving predictions through a REST or
+RPC API. There are several reported techniques for meeting inference service
+level objectives (SLOs). One is model-switching, [...] another is using adaptive
+batching queues with a timeout,"
+"Additionally, a cache layer may be put on top of the model to reduce
+computation"
+"Model warmup can be achieved either through a method provided by the ML
+framework [28] or more generally through issuing an empty query against the
+model [16]."
+
+% => Server
+"Runtime monitoring is important for operationalized ML in order to increase
+trust and detect performance degradations"
+"Predictions are logged, and when available joined with actual outcomes [28].
+Model accuracy should be used to determine when a new model is needed [39]"
+
+"ML models typically do not make inferences based on raw data, but may require
+data transformations both before and after inference. [44] warns that the data
+pre- and post-processing code in streaming ML systems could soon become another
+performance bottleneck."
+
+"edge resource management from the cloud is complex, partly because nodes may be
+on private networks or behind firewalls"
+"[7] and [42] reported a lack of generic solutions for deploying ML models to
+embedded and edge devices."
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{KolarNarayanappa2024AnMLOps}
+% An Analysis of the Barriers Preventing the Implementation of MLOps
+
+% => research gap
+"Our findings show that MLOps has some challenges that overlap with DevOps as
+well as some specific only to MLOps, like the complexity of data and model"
+
+"To build pipelines for ML models is a complex task, and the underlying
+infrastructure plays a big role in it."
+
+"The complexity of continuous integration in MLOps versus DevOps is one
+operational challenge mentioned. According to interviewees, MLOps necessitates a
+more comprehensive and complex approach to continuous integration."
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Kreuzberger2023MachineArchitecture}
+% Machine Learning Operations (MLOps): Overview, Definition, and Architecture
+
+% => research gap
+% => pipelines
+"From a research perspective, this does not come as a surprise as the ML
+community has focused extensively on the building of ML models, but not on
+(a) building production-ready ML products and (b) providing the necessary
+coordination of the resulting, often complex ML system components and
+infrastructure, including the roles required to automate and operate an
+ML system in a real-world setting" (pg.1)
+
+"the complexity of data engineering- or ML-pipeline tasks has
+increased the need for a tool specifically designed for the
+purpose of workflow or task orchestration" (pg.6)
+
+"Furthermore, the academic space has focused intensively on
+machine learning model building and benchmarking, but too little
+on operating complex machine learning systems in real-world scenarios"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Lorenzoni2021MachineReview}
+% Machine Learning Model Development from a Software Engineering Perspective:
+% A Systematic Literature Review
+
+"Nascimento et al. [9] pointed out that the differences between Traditional
+systems and Machine Learning systems can be identified by observing the
+differences between their respective software development activities. In fact,
+the authors identified that SE activities are more challenging for ML systems
+which follow a specific four-stage software development process, namely:
+understanding the problem, handling data, building models and monitoring those
+models."
+
+"In this way, continuous changes in data may arise either from
+(i) operations initiated by engineers themselves, or from
+(ii) incoming fresh data (e.g., sensor data, user interactions)."
+
+"In fact, the Feature Engineering Stage is skipped when dealing with deep
+learning algorithm (since algorithms for this purpose automatically learns the
+best feature for problem solving and model training, discarding the need for
+data scientists to do so), whereas when dealing with other kinds of algorithms,
+the feature selection is performed manually with data scientists executing
+operations like feature scoring to ranking features based on relevance."
+
+"Finally, to ensure all aspects run seamlessly during Model Deployment the
+authors recommend the following:
+(i) automating the training and deployment pipeline;
+(ii) integrating model building with the rest of the software;
+(iii) using common versioning repositories for both ML and non-ML codebases,
+      and tightly coupling the ML and non-ML development sprints and standups."
+
+"Further, they state that the best way to accomplish that is by following
+software engineering practices starting from the early ML modeling stages, which
+not only allows companies to reduce rework and dependence on the domain experts,
+but also leverage the maintainability of ML models."
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Lwakatare2020Large-scaleSolutions}
+% Large-Scale Machine Learning Systems in Real-World Industrial Settings: A Review of Challenges and Solutions
+
+"Among the main challenges are the determination and use of systematic
+approaches to implement ML models according to problem type and complexity
+while ensuring results are reproducible" (pg.02)
+
+% => pipelines
+"The development of ML components of large and complex software systems
+should not only be able to adapt to the evolutionary changes in the system,
+but also to the changes of the run-time context. This is reflected in all
+phases of the ML development workflow."
+
+"Often, early assumptions during ML model building lead to naïve approaches
+applied to rather complex ML problems" (pg.08)
+
+% => pipelines
+"ML components of large and complex systems deal with issues concerning
+the scaling of data, ML model size, and the number of ML models." (pg.09)
+
+"The result is that complexity accumulates and support is needed for
+model versioning (for rollback option), multiple models (for A/B testing)" (pg.10)
+
+"There are huge expectations on AI applications in domain of complex
+system which operate in complex environment." (pg.10)
+
+% => pipelines
+"As noted by Tian et al. [51], for complex systems, it is infeasible to
+manually create requirements specifications for ML component(s) since the
+logic is complex and often expressed in non-formal ways (like arbitrary
+text, or pictures)"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Makinen2021WhoHelp}
+% Who Needs MLOps: What Data Scientists Seek to Accomplish and How Can MLOps Help?
+
+"As the starting point, data must be available for training. There are various
+somewhat established ways of dividing the data to training, testing, and
+cross-validation sets. Then, an ML model has to be selected, together with its
+hyperparameters. Next, the model is trained with the training data. During the
+training phase, the system is iteratively adjusted so that the output has a good
+match with the “right answers” in the training material. This trained model can
+also be validated with different data. If this validation is successful – with
+any criteria we decide to use – the model is ready for deployment, similarly to
+any other component."
+
+"Once deployed, ML related features need monitoring, like any other deployed
+feature. However, monitoring in the context of ML must take into account
+inherent ML related features, such as biases and drift that may emerge over
+time. In addition, there are techniques that allow improving the model on the
+fly, while it is being used. Therefore, the monitoring system must take these
+special needs into account."
+
+"To summarize, phases in ML that precede completing the ML model seem to be
+waterfallish in their nature, whereas operationalizing the model to a larger
+whole follows the practices associated with conventional software"
+
+"Our hypothesis is that in general, organizations start with datacentric setup
+and then advance to model-centric mode, when they have solved issues that are
+related to data engineering. Then, when an organization masters building models,
+it can turn to making ML a standard operational procedure, which requires
+automation in the form of pipelines – in essence, MLOps."
+
+"In general, the survey shows that ML is moving away from one-man
+proof-of-concepts, described in [1], and advancing towards more mature setups
+where a team of developers work together in ML development"
+
+"Furthermore, the complexity of maintaining coherence and
+quality increases as the number of models grows, requiring a
+systematic approach to versioning also with respect to models
+and data sets."
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Martinez-Fernandez2022SoftwareSurvey}
+% Software Engineering for AI-Based Systems: A Survey
+
+"As AI-based software systems grew in size and complexity, and as its practical
+and commercial application increased, more advanced SE methods were required."
+
+"Software structure and architecture. Several situations particular to AI-based
+systems result in challenges to their structure"
+
+"As a particular case in this Topic, the SWEBOK sub-Topic Design patterns is
+also mentioned, given that the complexity of deploying ML techniques into
+production results in the emergence of several anti-patterns (glue code,
+pipeline jungles, etc.), making architecting a kind of plumbing rather than
+engineering activity"
+
+% Under "Discussion" section:
+"Challenges are highly specific to the AI/ML domain."
+"Challenges are mainly of a technical nature"
+"Data-related issues are the most recurrent type of challenge"
+
+"We find challenges related to different stages of the software process
+(e.g., identifying features over a large amount of data during requirements
+elicitation, preparing high-quality training datasets during testing), and also
+to transversal activities such as quality management (e.g., effects of data
+incompleteness on the overall system quality)"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Mboweni2022ADevOps}
+% A Systematic Review of Machine Learning DevOps
+
+"The common elements of MLOps as seen in these different definitions and
+explanations include: Continuous integration (CI) and continuous delivery (CD)
+automation, workflow orchestration, reproducibility, versioning of data, code,
+modelling, collaboration; continuous ML training and evaluation, ML metadata
+tracking and logging, continuous deployment, continuous monitoring, and
+feedback loops." (pg.4)
+
+"an approach used to provide an end-to-end machine learning development process
+to design, build and manage reproducible, testable, and evolvable ML-powered
+software" (pg.2, quoting Azure website)
+
+"MLOps or ML Ops is a set of practices that aims to deploy and maintain
+machine learning models in production reliably and efficiently"
+(pg.2, quoting Wikipedia)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Nahar2021MoreProjects}
+% More Engineering, No Silos: Rethinking Processes and Interfaces in Collaboration between Interdisciplinary Teams for Machine Learning Projects
+
+"Especially in small teams, data scientists report struggling with the
+complexity of the typical ML infrastructure"
+
+"Arguably, ML increases software complexity [...] and makes engineering
+practices such as data quality checks, deployment automation, and testing
+in production even more important."
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Nahar2023APractitioners}
+% A Meta-Summary of Challenges in Building Products with ML Components
+% - Collecting Experiences from 4758+ Practitioners
+
+The top layer includes development stages:
+(1) Requirements Engineering,
+(2) Architecture, Design, and Implementation, with a special focus on
+    (2a) Model Development and (2b) Data Engineering
+(3) Quality Assurance
+(4) Process challenges
+(5) Team challenges as crosscutting concerns.
+
+% A. Requirements Engineering
+"Lack of AI literacy causes unrealistic expectations from customers, managers,
+and even other team members"
+"Vagueness in ML problem specifications makes it difficult to map business goals
+to performance metrics"
+"Regulatory constraints specific to data and ML introduce additional requirements
+that restrict development"
+
+% B. Architecture, Design, and Implementation
+"Transitioning from a model-centric to a pipeline-driven or system-wide view is
+considered important for moving into production, but a difficult paradigm shift
+for many teams"
+% => research gap
+"ML adds substantial design complexity with many, often implicit, data and
+tooling dependencies, and entanglements due to a lack of modularity"
+"Difficulty in scaling model training and deployment on diverse hardware"
+"While monitorability and planning for change are often considered important,
+they are mostly considered only late after launching"
+
+% C. Model Development
+"Model development benefits from engineering infrastructure and tooling, but
+provided infrastructure and technical support are limited in many teams"
+"Code quality is not standardized in model development tools, leading to
+conflicts about code quality"
+
+% D. Data Engineering
+"Data quality is considered important, but difficult for practitioners and not
+well-supported by tools"
+"Internal data security and privacy policies restrict data access and use"
+"Although training-serving skew is common, many teams lack support for its
+required detection and monitoring"
+"Data versioning and provenance tracking are often seen as elusive, with not
+enough tool support"
+
+% E. Quality Assurance
+"Testing and debugging ML models is difficult due to lack of specifications"
+"Testing of model interactions, pipelines, and the entire system is considered
+challenging and often neglected"
+"Testing and monitoring models in production are considered important but
+difficult, and often not done"
+"There are no standard processes or guidelines on how to assess system qualities
+such as fairness, security, and safety in practice"
+
+% F. Process
+"Development of products with ML component(s) is often ad-hoc, lacking
+well-defined processes"
+"Uncertainty in ML development makes it hard to plan and estimate effort and
+time"
+"Practitioners find documentation more important than ever in ML, but find it
+more challenging than traditional software documentation"
+
+% G. Organizations and Teams
+"Building products with ML components requires diverse skill sets, which is
+often missing in development teams"
+"Many teams are not well-prepared for the extensive interdisciplinary
+collaboration and communication needed in ML products"
+"ML development can be costly, and resource limits can substantially curb/limit
+efforts"
+"Lack of organizational incentives, resources, and education hampers achieving
+all system-level qualities"
+
+% => research gap
+"Machine learning seems to provide significant challenges to architectural design
+of software systems, but arguably many challenges are similar to other large and
+complex and distributed software systems."
+"From the challenges raised by practitioners, it is apparent that along with the
+need for design practices, patterns, and mechanisms to handle system and
+model-level considerations (e.g., dependency management, scalability,
+monitorability), we also need to support teams in shifting from model-centric
+work to system thinking, possibly through tailored education for ML
+practitioners."
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Nascimento2020SoftwareReview}
+% Software engineering for artificial intelligence and machine learning software:
+% A systematic literature review
+
+Take away 1: Empirical studies report AI software in various application
+domains, with the main focus being Automotive, Finance, and Healthcare and with
+the wide adoption of Artificial Neural Network algorithms
+
+Take away 2: The majority of our research on SE reports AI development as a
+research-driven process. Significant AI projects are reported in a lab context
+or a large company. There is a lack of process studies in small and medium
+enterprises (SME) or start-up contexts.
+
+Take away 3: Testing space for AI software is much larger, more heterogeneous
+and, in many cases, it is difficult to formally define in comparison to
+traditional software testing.
+
+Take away 4: Besides Interpretability, empirical research highlights various
+engineering challenges in regard to AI ethics.
+
+Take away 5: AI development processes need to integrate infrastructures,
+processes and tools for managing data as their integral parts. It is not AI
+software, but AI data and software engineering.
+
+Take away 6: AI project managers need competence and knowledge to act as a
+boundary-spanning role across AI/ML and non-AI/ML worlds
+
+Take away 7: AI/ML system development needs new engineering guidance to
+identify, describe, analyze and manage AI software quality requirements.
+
+Take away 8: The major challenges professionals face in the development of AI/ML
+systems include: testing, AI software quality, data management, model
+development, project management, infrastructure, and requirement engineering.
+
+Take away 9: The laboratory (experimental or simulation) context is where
+practices are mostly applied. Second is the software industry context, where
+practices are mostly applied in large companies by teams specialized in ML.
+
+Take away 10: The three areas of SWEBOK with the most proposed practices for
+supporting the development of AI/ML systems are testing, design, and
+configuration management.
+
+Take away 11: The contribution types of the most frequently proposed SE
+practices for supporting the development of AI/ML systems are framework/methods,
+guidelines, lessons learned, and tools.
+
+Take away 12: The types of empirical methods mostly used in research on AI/ML
+development are case studies, and the research strategies adopted are field
+studies and field experiments.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Priestley2023APipelines}
+% A Survey of Data Quality Requirements That Matter in ML Development Pipelines
+
+% HAS A PIPELINE ARCHITECTURE FIGURE
+
+"What is new, however, is that ML development is characterized by complex
+configurations of datasets, data services and data handlers, which makes
+individuals more vulnerable to abstain from taking action due to the belief
+that data quality is somebody else’s problem" (pg.6)
+
+% => have train & inference
+"DevOps for AI not only takes into consideration traditional software
+development but focuses on the added complexity of AI development,
+such as data handling" (pg.2)
+
+"The necessary tracking provenance becomes challenging if a complex model
+combines several other models which were trained on different data sets"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Sculley2015HiddenSystems}
+% Hidden Technical Debt in Machine Learning Systems
+
+"It may be surprising to the academic community to know that only a tiny fraction
+of the code in many ML systems is actually devoted to learning or prediction"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Serban2020AdoptionLearning}
+% Adoption and Effects of Software Engineering Best Practices in Machine Learning
+
+"The adoption of ML components in production-ready applications demands strong
+engineering methods to ensure robust development, deployment and maintenance."
+
+"Our results suggest that the practices apply universally to any ML application
+and are largely independent of the type of data considered."
+
+"In particular, managing and versioning data during development, monitoring
+and logging data for deployed models and estimating the effort needed to develop
+ML components present striking differences with the development of traditional
+software components."
+
+"One of the initial publications on this topic is the work of Sculley et al.
+[45], which used the framework of technical debt to explore risk factors for ML
+components."
+
+"For example, Amershi et al. [3] present a nine-stage ML pipeline. Alter-
+natively, Sato et al. [44] partition similar activities into six pipeline
+stages. All processes have roots in early models for data mining, such as
+CRISP-DM [58]."
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Serban2021PracticesApplications}
+% Practices for Engineering Trustworthy Machine Learning Applications
+
+"In total, we identified 14 new practices, and used them
+to complement an existing catalogue of ML engineering practices."
+
+T01 Test for social bias in training data
+T02 Prevent discriminatory data attributes from being used as model features
+T03 Use privacy preserving ML techniques
+T04 Employ interpretable models whenever possible
+T05 Assess and manage subgroup bias
+T06 Assure application security
+T07 Provide audit trails
+% T8 is the one useful: teams discuss about trade-offs
+T08 Decide trade-offs through an established team process
+T09 Establish responsible AI values
+T10 Perform risk assessments
+T11 Inform users on ML usage
+T12 Explain results and decisions to users
+T13 Provide safe channels to raise concerns
+T14 Have your application audited
+
+"At the other end of the spectrum, the practices related to
+establishing team processes for deciding trade-offs (T8) and
+establishing responsible AI values (T9) have higher adoption."
+
+"Other practices are more established in the engineering community (T8)"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Serban2021PracticesApplications}
+% Adapting Software Architectures to Machine Learning Challenges
+
+"The taxonomy was used to classify the challenges (and solutions) in: (i)
+Requirements (Reqs.) – requirements elicitation for ML components, mapped to
+model requirements and business understanding [20], [67], (ii) Data – data
+collection, preparation and validation, mapped to data taxonomies [20], [13],
+[67], (iii) Design – the system’s structure, SA decisions and trade-offs, mapped
+to training and coding taxonomies [20], [13], (iv) Testing – testing and
+validation of software with ML components, mapped on the evaluation taxonomies
+[20], [67] and (v) Operational (Ops.) – deployment, monitoring and evolution,
+mapped to deployment taxonomies [20], [67]."
+
+% => pipelines
+% => coupling
+Design challenges:
+- Separate concerns between training, testing, and serving,
+  but reuse code between them.
+- Distinguish failures between ML components and other business logic.
+- ML components are highly coupled, and errors can have cascading effects.
+- ML components bring inherent uncertainty to a system.
+- ML components can fail silently. These failures can be
+  hard to detect, isolate and solve.
+- ML components are intrinsically opaque, and deductive reasoning
+  from the architecture artifacts, code or metadata is not effective.
+- Avoid unstructured components which link frameworks or APIs (e.g., glue code).
+- Automation and understanding of ML tasks is difficult (AutoML).
+
+Design solutions:
+- Standardize model interfaces. Use one middleware.
+  Reuse virtualization, infrastructure and test scripts.
+- Separate business logic from ML components. Standardize interfaces
+  and use one middleware between them.
+- Design independent modules/services for ML and data. Standardize
+  interfaces and use one middleware. Relax coupling heuristics
+  between ML and data.
+- Use n-versioning. Design and monitor uncertainty metrics.
+  Employ interpretable models/human intervention.
+- Use metric monitoring and alerts to detect failures. Use n-versioning.
+  Employ interpretable models.
+= Instrument the system to the fullest extent. Use n-versioning. Employ
+  interpretable models. Design log modules to aggregate/visualize metrics.
+= Wrap components in APIs/modules/services. Use standard interfaces
+  and one middleware. Use virtualization.
+- Version configuration files. Design the log and versioning systems
+  to support AutoML data retrieval.
+
+We also notice a challenge regarding the integration of ML components with
+traditional software components and business logic (7), which finds it
+difficult to distinguish failures between the two.
+
+Within the challenges with the highest impact, we observe one
+traditional challenges that is strengthened by ML (component
+coupling (8)) and multiple ML-specific challenges.
+
+The highest impact on SA comes from the need to continuously
+retrain ML components (16), while the lowest impact comes
+from ML task automation (13).
+
+The separation of concerns and encapsulation of code was
+modelled as one theme: “design separate modules/services”.
+Here, participants reported that code was either developed as
+separate modules or as independent services. This develop-
+ment included encapsulation for reuse.
+
+Here, we note that the majority of survey respondents reported
+the development of independent modules/services for instrumentation
+and monitoring.
+
+These results indicate a separation between ML and SE concerns exists.
+Moreover, they indicate that mature teams jointly adopt advanced test
+practices, as also noticed in [18].
+
+The results are illustrated in Fig. 2c and indicate that the
+majority of respondents used the event-driven style. Nonethe-
+less, the difference between event-driven, lambda and micro-
+service/SOA architecture styles is not large.
+
+The results from our study indicate that, with the exception of
+“Interpretability”, ML-specific quality attributes are not yet critical SA
+decision drivers. However, we expect this to change once mature quality models
+for ML are available.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% => research gap
+\parencite{Shankar2022OperationalizingStudy}
+% Operationalizing Machine Learning: An Interview Study
+
+"Many participants expressed an aversion to complexity, preferring to rely
+on simple models and algorithms whenever possible" (pg.8)
+
+"We found that MLEs used layers of abstraction (e.g., “config-based
+development”) as a way to manage complexity: most changes (especially
+high-velocity ones) were minor and limited to the Run Layer, such as
+selecting hyperparameters. As the stack gets deeper, changes become
+less frequent: MLEs ran training jobs daily but modified Dockerfiles
+occasionally" (pg.14)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Shankar2024WeLearning}
+% “We Have No Idea How Models will Behave in Production until Production”:
+% How Engineers Operationalize Machine Learning
+
+% => research gap
+"Although the model retraining process was automated, we find that MLEs
+personally reviewed validation metrics and manually supervised the promotion
+from one stage to the next. They had oversight over every evaluation stage,
+taking great care to manage complexity and change over time: specifically,
+changes in data, product and business requirements, users, and teams within
+organizations."
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Shivashankar2022MaintainabilityReview}
+% Maintainability Challenges in ML: A Systematic Literature Review
+
+"There is also a high degree of complexity in today’s software, and the size of
+the software has grown considerably, making maintenance increasingly difficult"
+
+"Therefore, producing ”software that is easy to maintain” could save a lot of
+time and money and deliver long-term value."
+
+% => Pipelines
+"In ML, data is the first-class citizen, and it is well known that the majority
+of the time spent on ML development is spent on processing data"
+"ML workflows usually begin with acquiring and preparing the data for training."
+"Data engineering pipelines typically involve a sequence of operations on a set
+of data from various sources."
+"Generally, data engineering is divided into many stages: Data acquisition and
+exploration, Data processing, Data validation and management [15]."
+"A model engineering pipeline consists of several operations that result in a
+final model usually used by ML engineers and data science teams. These
+operations include Model Training, Hyper-Parameter Optimization (HPO), Model
+Governance, Model Monitoring, Model Testing, Model drift, and Model Deployment"
+
+% Challenges
+"The large scale nature of the data, particu- larly in Deep Learning (DL),
+makes this process quite complex and challenging when dealing with an actively
+evolving dataset"
+"Data validation challenges are profound when data may change as it evolves and
+error due to possible bugs in the data source [L2] consequently making it
+complex to monitor and validate what is happening in the data."
+"Even the choice of model training techniques like incremental training and
+federated learning will add to the complexity of managing, integrating and
+deploying the training pipeline to other systems and applications"
+"fault testing is also difficult to manage in ML when the learning is based on
+training data which makes it hard to interpret results from a complex model"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Steidl2023ThePractice}
+% The pipeline for the continuous development of artificial intelligence models
+% —Current state of research and practice
+
+% HAS A PIPELINE ARCHITECTURE FIGURE
+
+% => pipelines
+"One possible solution for ensuring quality during the development of AI are
+automated end-to-end CI/CD lifecycle pipelines (Mishra and Otaiwi, 2020). These
+pipelines are well established in traditional software development; however,
+need more research when adapting them to AI models because these pipelines not
+only need to handle code but also data and the model itself in addition to a
+large system-level complexity (Fischer et al., 2020; Granlund et al., 2021).
+These pipelines focus on automating and monitoring all phases of system
+development, such as the integration, testing, and deployment, as well as the
+management of the infrastructure." (pg.1)
+
+"A new practice, called Continuous Training (CT) is introduced that according
+to Google Cloud ‘[...] is concerned with automatically retraining and serving
+the models’"
+"Several authors use the term continuous pipeline or workflow to describe the
+automatic execution and reiteration of tasks to ensure the lifecycle management
+of AI"
+
+"CD4ML is a technical implementation of the MLOps concept to automate the
+pipeline for the continuous development of AI"
+
+% => pipelines
+"four pipeline stages including their tasks when triggering the pipeline.
+The four stages are
+(1) Data Handling - executing data handling
+(2) Model Learning - implementing the model development
+(3) Software Development - building the AI application
+(4) System Operations - focusing on a smoothly running system
+    and information collection in production."
+
+"The pipeline has to be flexible and customizable to avoid becoming too
+restrictive (Seyffarth, 2019) and to allow using preferred and established
+tools, services and engineering practices"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% => research gap
+\parencite{Tamburri2020SustainableChallenges}
+% Sustainable MLOps: Trends and Challenges
+
+% => pipelines
+"On the other hand, the more complexity is added to AI software operations, the
+less such operations become sustainable [8]. The term complexity is intended not
+only software architecture complexity (e.g., even simply the number of
+components to be orchestrated as part of the AI software solution) but also the
+orchestration management complexity intrinsic to handling many autonomous
+software components at the same time and continuously [9]" (pg.1)
+
+"On the other hand, complex AI software typically includes tens of autonomous
+decision-making components choreographed as part of an equally complex
+orchestration of business services" (pg.5)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Tang2021AnSystems}
+% An Empirical Study of Refactorings and Technical Debt in Machine Learning Systems
+
+% => pipelines
+"such systems do not only consist of ML models; instead, ML systems typically
+encompass complex subsystems that support ML processes [1]. ML systems — like
+other long-lived, complex systems — are prone to classic technical debt [2]
+issues; yet, they also exhibit debt specific to such systems [3].
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% => research gap
+\parencite{Wan2021HowPractices}
+% How does Machine Learning Change Software Development Practices?
+
+"Interviewees repeatedly mentioned that the design of ML systems and non-ML
+software systems differently place emphasis in a few ways" (pg.7)
+
+"Due to the high volume of data, the distributed architectural style is widely
+preferred for ML systems. Distributed architectural style usually leads to
+complexity in architectural and detailed design." (pg.7)
+
+% => pipelines, coupling
+"Although different components in ML systems have separate functionalities,
+they are highly coupled. For instance, the performance of data modeling is
+dependent on data processing." (pg.7)
+
+"P1 noted that data modeling could contain tens to hundreds of candidates of
+machine learning algorithms, which indicates an ample search space" (pg.7)
+
+"As a result, configuration management for ML systems becomes more complex
+compared to non-ML software. Besides code and dependencies, data, model files,
+model dependencies, hyperparameters require configuration management." (pg.8)
+
+% => pipelines
+"Interviewees reported that configuration management for ML systems involves a
+larger amount of content compared to non-ML software [S20]. One reason is that
+machine learning models include not only code but also data, hyperparameters,
+and parameters." (pg.9)
+
+% => research gap
+"Practitioners need to recognize that there is never a final version of a
+machine learning system, which needs to be updated and improved continuously
+over time (e.g., feeding new data and retrain models)" (pg.12)
+
+"In this work, we identified the significant differences between ML and non-ML
+development. The differences lie in a variety of aspects, including software
+engineering practices (e.g., exploratory requirements elicitation and iterative
+processes in ML development) and the context of software development (e.g., high
+complexity and demand for unique solutions and ideas in ML development). The
+differences originate from inherent features of machine learning— uncertainty
+and the data for use." (pg.13)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parencite{Wazir2023MLOps:Review}
+% MLOps: A Review
+
+"Furthermore, as the number of models grows, the complexity of maintaining
+coherence and quality grows, necessitating a well-organized versioning system
+for both structures and databases." (pg.7) What is new, however, is that ML
+development is characterized by complex configurations of datasets, data
+services and data handlers, which makes individuals more vulnerable to abstain
+from taking action due to the belief that data quality is somebody else’s
+problem"

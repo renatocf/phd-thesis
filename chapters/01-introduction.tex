@@ -6,340 +6,412 @@
 \label{chap:introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-  % data science is cool
-  % data science hype => ml spread
-  % ml-based systems are complex
-  % complexity has 2 parts: essential, accidental
-  % ml-based systems have higher essential complexity
-  % ml-based systems can have higher accidental complexity
-  % most ml-based systems are not delivered
-  % failture comes from various reasons: experience, teams, infrastructure
-  % those are reflected into the architecture, becoming accidental complexity
-  % measuring complexity in ml-enabled systems => finding signals of failure
-  % finding signals of failture => improve the delivery of ml-based systems
+% data science is cool
+% data science hype => ml spread
+% ml-based systems are complex
+% complexity has 2 parts: essential, accidental
+% ml-based systems have higher essential complexity
+% ml-based systems can have higher accidental complexity
+% most ml-based systems are not delivered
+% failture comes from various reasons: experience, teams, infrastructure
+% those are reflected into the architecture, becoming accidental complexity
+% measuring complexity in ml-enabled systems => finding signals of failure
+% finding signals of failture => improve the delivery of ml-based systems
 
-  % *Why* ML-enabled systems are complex?
-  Since 2011, the interest in the term \emph{Data Science} has grown steadily:
-  ``data scientist'' has been considered ``the sexiest job of the 21st century''%
-  ~\parencite{Cao2018DataScience,Davenport2012DataCentury}. Big tech companies
-  such as Microsoft, Google, and Apple have been steadily delivering more
-  AI-based products. This experience soon led their software engineers to
-  an important understanding: models are only a small part of real-world
-  ML-based systems~\parencite{Hulten2018BuildingSystems,Sculley2015HiddenSystems}.
-  In fact, ML-based applications evolve via three different axes of change:
-  code, model, and data~\parencite{Sato2019ContinuousLearning}.
-  This makes them inherently more complex than traditional software-based
-  information systems~\parencite{Amershi2019SoftwareStudy,
-  Burkov2020MachineEngineering}.
+% *Why* ML-enabled systems are complex?
+Since 2011, the interest in the term \emph{Data Science} has grown steadily:
+``data scientist'' has been considered ``the sexiest job of the 21st century''%
+~\parencite{Cao2018DataScience,Davenport2012DataCentury}. Big tech companies
+such as Microsoft, Google, and Apple have been steadily delivering more
+AI-based products. This experience soon led their software engineers to
+an important understanding: models are only a small part of real-world
+ML-based systems~\parencite{Hulten2018BuildingEngineering,Sculley2015HiddenSystems}.
+In fact, ML-based applications evolve via three different axes of change:
+code, model, and data~\parencite{Alves2024PracticesReview,Sato2019ContinuousLearning}.
+This makes them inherently more complex than traditional software-based
+systems~\parencite{Diaz-De-Arcaya2023ASurvey, Giray2021AChallenges,
+Granlund2021MLOpsCases}.
+% systems~\parencite{Amershi2019SoftwareStudy, Belani2019RequirementsSystems,
+% Burkov2020MachineEngineering, Diaz-De-Arcaya2023ASurvey, Giray2021AChallenges,
+% Granlund2021MLOpsCases}.
 
-  % *How* ML-enabled systems are complex?
-  \emph{Complexity} has been a subject of discussion since the early
-  days of the Software Engineering field~\parencite{Brooks1975TheMan-Month,
-  Parnas1985TheSystems}. In the book~\citetitle{Brooks1975TheMan-Month},
-  \citeauthor{Brooks1975TheMan-Month} introduces the concept of
-  \emph{essential} and \emph{accidental} complexity for software%
-  ~\parencite{Brooks1975TheMan-Month}:
-    the \emph{essential} exists intrinsically to satisfy the requirements
-    of the problem solved, whereas the \emph{accidental} may originate
-    from any external factors that influence the solution chosen.
-  Under this definition, an ML-enabled system has high essential
-  complexity: it requires extra components in its architecture to
-  support data processing and model handling%
-  ~\parencite{Amershi2019SoftwareStudy,Lakshmanan2020MachinePatterns}.
-  % As a consequence, this also creates more opportunities for
-  % introducing accidental complexity into the system.
+% *How* ML-enabled systems are complex?
+\emph{Complexity} has been a subject of discussion since the early
+days of the Software Engineering field~\parencite{Brooks1975TheMan-Month,
+Parnas1985TheSystems}. In the book~\citetitle{Brooks1975TheMan-Month},
+\citeauthor{Brooks1975TheMan-Month} introduces the concept of
+\emph{essential} and \emph{accidental} complexity for software%
+~\parencite{Brooks1975TheMan-Month}:
+  the \emph{essential} exists intrinsically to satisfy the requirements
+  of the problem solved, whereas the \emph{accidental} may originate
+  from any external factors that influence the solution chosen.
+Under this definition, an ML-enabled system has high essential
+complexity: it requires extra components in its architecture to
+support data processing and model handling%
+~\parencite{Ameisen2020BuildingApplications, Amershi2019SoftwareStudy,
+Benton2020MachineApplications}.
+%, Lakshmanan2020MachineMLOps, Huyen2022DesigningApplications, 
+% Wilson2022MachineAction}.
+% As a consequence, this also creates more opportunities for
+% introducing accidental complexity into the system.
 
-  % *Why* complexity matters?
-  According to Gartner's reports~\parencite{Gartner2020,Gartner2022},
-  only around 53-54\% of AI projects successfully reach production.
-  Besides technical challenges~\parencite{Sculley2015HiddenSystems, 
-  Thung2012AnSystems}, many factors influence the ability to deliver, such as
-    developer experience~\parencite{MartinCleanCode2008,Reilly2022TheChange},
-    team composition~\parencite{Nahar2021MoreProjects,Skelton2019TeamFlow},
-    development processes ~\parencite{Nahar2021MoreProjects,
-    Shankar2022OperationalizingStudy, Wazir2023MLOps:Review}, and
-    infrastructure~\parencite{Davis2019CloudPatterns}.
-  All of them end up reflected into the software architecture%
-  ~\parencite{Brooks1975TheMan-Month, Ford2021SoftwareParts,
-  Richards2020FundamentalsApproach}, thus becoming potential
-  sources of accidental complexity.
+% *Why* complexity matters?
+According to Gartner's reports~\parencite{Gartner2020,Gartner2022},
+only around 54\% of AI projects successfully reach production.
+Besides technical challenges~\parencite{Sculley2015HiddenSystems, 
+Thung2012AnSystems}, many factors influence the ability to deliver, such as
+  infrastructure~\parencite{Davis2019CloudPatterns,Morris2020InfrastructureCode},
+  developer experience~\parencite{MartinCleanCode2008,Reilly2022TheChange},
+  development processes~\parencite{Nahar2021MoreProjects,
+  Shankar2022OperationalizingStudy, Wazir2023MLOps:Review}, and
+  team composition~\parencite{Nahar2021MoreProjects,Skelton2019TeamFlow}.
+All of them reflect into the software architecture%
+~\parencite{Brooks1975TheMan-Month, Ford2021SoftwareParts,
+Richards2020FundamentalsApproach}, thus becoming potential
+sources of accidental complexity.
 
-  This proposal presents a plan to create a \emph{metrics-oriented
-  architectural model to characterize the complexity of ML-enabled
-  systems}. By understanding how complexity emerges in the software
-  architecture, this research aims to provide a method to
-  identify some of the pitfalls that make ML-enabled systems
-  fail to reach production.
+% This proposal presents a plan to create a \emph{metrics-oriented
+% architectural model to characterize the complexity of ML-enabled
+% systems}. By using metrics to identify where complexity emerges
+% in the software architecture of ML-enabled systems, this research
+% aims to provide a method to avoid pitfalls that make them fail
+% to reach production.
 
-  % -- developer experience, team composition, infrastructure, etc.
+This research plan outlines \emph{a metrics-oriented architectural
+model to characterize the complexity of ML-enabled systems}.
+The goal is to use metrics to identify where complexity
+emerges in the software architecture of ML-enabled systems.
+Hopefully, this technique will assist developers to manage
+complexity, allowing them reach production more often.
 
-  % Under this definition, creating an ML-enabled system where a traditional
-  % software-based one suffices is its own category of accidental complexity
-  % -- a practice strongly discouraged by introductory texts to the field%
-  % ~\parencite{Burkov2020MachineEngineering,Hulten2018BuildingSystems,
-  % Wilson2022MachineAction}.
-  % All can become a source of accidental complexity in a system. 
+% -- developer experience, team composition, infrastructure, etc.
 
-  % However, when an ML-enabled system is adequate, handling its higher complexity
-  % may be even more important to build, deliver, and maintain successful products.
-  % As a consequence,
-  % building ML-enabled systems requires considering a whole AI hierarchy of needs%
-  % ~\parencite{Rogati2017TheNeeds}, whereas maintaining them demands rigor
-  % against many types of technical debt~\parencite{Sculley2015HiddenSystems}.
-  % Unfortunately, Data Science alone does not focus on these requirements%
-  % ~\parencite{Burkov2020MachineEngineering,Makinen2021WhoHelp,Menzies2020TheAI,
-  % Sato2019ContinuousLearning}.
+% Under this definition, creating an ML-enabled system where a traditional
+% software-based one suffices is its own category of accidental complexity
+% -- a practice strongly discouraged by introductory texts to the field%
+% ~\parencite{Burkov2020MachineEngineering,Hulten2018BuildingSystems,
+% Wilson2022MachineAction}.
+% All can become a source of accidental complexity in a system. 
 
-  % \section{Problem Outline}
-  % \label{sec:problem_outline}
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-  \section{Research Questions}
-  \label{sec:research_questions}
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-    To achieve the goal of this research, this proposal introduces three
-    main research questions and two sub-questions. They were defined
-    according to the SMART principles, i.e., they should be Specific,
-    Measurable, Achievable, Relevant, and Time-Bound.
-
-    \begin{researchquestion}
-      What are the complexity metrics related to the architecture of
-      ML-enabled systems?
-    \end{researchquestion}
-
-    The first research question aims to understand which complexity
-    metrics are available in the literature. \emph{Software Metrics}
-    have already been thoroughly explored by the software engineering field%
-    ~\parencite{Fenton2014SoftwareEdition}. However, ML-enabled systems also
-    have their data and model dependencies~\parencite{Sato2005RNAFields},
-    which fundamentally influence the functionality of the system.
-    Finding metrics that describe the complexity of data and model
-    related decisions \emph{beyond code} is the biggest potential
-    challenge for answering this research question.
-
-    \begin{researchquestion}
-      How can complexity metrics be measured over the architecture of
-      ML-enabled systems?
-    \end{researchquestion}
-
-    The second research question aims to create a process to collect
-    the metrics found in \cref{rq:1}.
-    % ML-enabled systems have their own
-    % intricacies, which emerge as different design and architectural patterns
-    % ~\parencite{Lakshmanan2020MachinePatterns,Washizaki2019StudyingSystems}.
-    Metrics have different levels of abstraction: they may be related
-    to code snippets, components, services, or dependencies of a system
-    \parencite{Fenton2014SoftwareEdition}. Measuring a metric may require
-    different levels of access to the system (e.g., having the codebase
-    available for processing) or rely on different representations of
-    the system (e.g., creating a graph describing its data flow).
-    As a consequence, only some metrics found in \cref{rq:1} may
-    be practical to collect. In particular, if two metrics provide
-    similar information, it may be preferable to use the simpler.
-    The subset of metrics worth collecting will become the
-    \emph{metrics-oriented architectural model} this research
-    proposes to create. Choosing which metrics should be included
-    is the main challenge for answering this research question.
-    
-    % \begin{subresearchquestion}
-    %   How should an ML-enabled system be prepared for collecting
-    %   complexity metrics?
-    % \end{subresearchquestion}
-    
-    % \begin{subresearchquestion}
-    %   Which subset of complexity metrics should be chosen to characterize
-    %   the architecture of ML-enabled systems?
-    % \end{subresearchquestion}
-
-    \begin{researchquestion}
-      How can complexity metrics be used to aid the development of
-      real-world ML-enabled systems?
-    \end{researchquestion}
-
-    The third research question aims to understand the usefulness and
-    potential impact of the \emph{metrics-oriented architectural model}
-    resulting from \cref{rq:2}. If the model succeeds in characterizing
-    the complexity, it should aid engineers building ML-enabled systems.
-    Since this can happen in multiple ways, this research will focus on
-    two development tasks, described via the following sub-questions.
-    
-    \begin{subresearchquestion}
-      How can complexity metrics be used to choose between architecture
-      proposals for an ML-enabled system?
-    \end{subresearchquestion}
-
-    This sub-question aims to understand if the \emph{metrics-oriented
-    architectural model} proposed in \cref{rq:2} can help discussions
-    about how to \emph{evolve} ML-enabled systems. During the lifecycle of a
-    system, such discussions are usually motivated by new major functional
-    requirements. The goal is to \emph{avoid introducing accidental complexity},
-    since the more complex the system, the harder it is to understand
-    and maintain. For such purpose, metrics can be particularly useful
-    to objectively measure the impact of changes. The greatest challenge
-    for this sub-question is to explain the \emph{metrics-oriented
-    architectural model} for developers, and then test if it improves
-    their ability to choose between architecture proposals.
-
-    \begin{subresearchquestion}
-      How can complexity metrics be used to identify refactoring
-      opportunities in an ML-enabled systems?
-    \end{subresearchquestion}
-
-    Similarly, this sub-question aims to understand if the
-    \emph{metrics-oriented architectural model} proposed in \cref{rq:2}
-    can help discussions about how to \emph{improve} ML-enabled systems.
-    During the lifecycle of a system, such discussions are usually motivated
-    by paying technical debt. The goal is to \emph{reduce accidental complexity},
-    since the more complex the system, the harder it is to understand and
-    maintain. For such purpose, metrics can be particularly useful to
-    objectively measure the impact of changes. The greatest challenge
-    for this sub-question is to explain the \emph{metrics-oriented
-    architectural model} for developers, and then test if it improves
-    their ability to identify refactoring opportunities.
-
-  \section{Proposal Structure}
-  \label{sec:proposal_structure}
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-    The remaining of this proposal is structured as follows.
-      \Cref{chap:machine_learning_engineering} introduces the field of
-      Machine Learning Engineering and formally discusses the definition
-      of ML-enabled systems.
-      \Cref{chap:measuring_complexity} provides a preliminary literature
-      review about software metrics.
-      \Cref{chap:research_methodology} delineates the research
-      methodology, whose goal is to answer the research questions
-      presented in \cref{sec:research_questions}.
-      Finally, \Cref{chap:work_plan} presents the work plan to execute
-      this research up to the end of this PhD.
-
-% % [ ] What is the big data phenomenon?
-% Data is being produced on a scale never seen in history. The so-called
-% ``big data phenomenon'' has been represented by three changes in how
-% data is collected and processed:
-%   the volume, going from terabytes up to zettabytes of storage;
-%   the variety, going from structured to more unstructured sources; and
-%   the velocity, going from batch to streaming%
-% ~\parencite{Sagiroglu2013BigReview}.
-% Meanwhile, reasoning over and making decisions from large amounts of data
-% has become a challenge and an opportunity for both academia and industry
-% worldwide~\parencite{Lu2020ArtificialInnovation}.
-
-% % [ ] What is Data Science?
-% Data Science (DS) is an interdisciplinary field that mixes different skill
-% sets to collect, organize, and analyze data \parencite{Hayashi1998WhatExample}.
-% Traditionally, these tasks were in the realm of Statistics, which provides
-% techniques to create insights from data. However, handling big data also
-% requires knowledge about other fields, such as Computer Science, Business,
-% and Sociology~\parencite{Cao2018DataScience,Dhar2013DataPrediction}.
-% This enables creating data products that solve problems such as
-% classification, recommendation, or decision-making%
-% ~\parencite{Cao2018DataScience,Lakshmanan2020MachinePatterns}.
-
-% % [ ] What are Artificial Intelligence and Machine Learning?
-% There is no generally accepted definition for Artificial Intelligence (AI)%
-% ~\parencite{Emmert-Streib2020ArtificialStatus}. As a field, the goal of AI
-% is to understand and build intelligent entities, encompassing methods
-% from different areas~\parencite{RussellS2021Artificial4th}. Among them,
-% Machine Learning (ML) comprehends techniques that can learn from data,
-% producing empirical solutions for problems~\parencite{Abu-Mostafa2012LearningData}.
-% These broad descriptions blurry the line between the domains of Statistics,
-% AI, and ML~\parencite{Emmert-Streib2020ArtificialStatus}. Regardless,
-% the task of modeling, i.e., creating models from data, has become
-% one of the primary responsibilities of modern data scientists%
-% ~\mbox{\parencite{Burkov2020MachineEngineering,Kim2016TheTeams,
-% Lakshmanan2020MachinePatterns}}.
-
-% % What are the limitations of Data Science?
-% Since 2011, the interest in the term Data Science has grown steadily,
-% with ``data scientist'' considered ``the sexiest job of the 21st century''%
-% ~\parencite{Cao2018DataScience,Davenport2012DataCentury}. Big tech companies
-% such as Google, Microsoft, and Apple started developing and launching more
-% AI-based products. Their experience led to an important understanding:
-% models make only a small part of real-world intelligent systems%
-% ~\mbox{\parencite{Hulten2018BuildingSystems,Sculley2015HiddenSystems}}.
-% Furthermore, AI/ML applications have three different axes of change:
-% code, model, and data~\parencite{Sato2019ContinuousLearning}.
-% This makes them inherently more complex than traditional software-based
-% information systems~\parencite{Amershi2019SoftwareStudy}. In fact, building
-% intelligent systems requires considering a whole AI hierarchy of needs%
+% However, when an ML-enabled system is adequate, handling its higher complexity
+% may be even more important to build, deliver, and maintain successful products.
+% As a consequence,
+% building ML-enabled systems requires considering a whole AI hierarchy of needs%
 % ~\parencite{Rogati2017TheNeeds}, whereas maintaining them demands rigor
 % against many types of technical debt~\parencite{Sculley2015HiddenSystems}.
 % Unfortunately, Data Science alone does not focus on these requirements%
 % ~\parencite{Burkov2020MachineEngineering,Makinen2021WhoHelp,Menzies2020TheAI,
 % Sato2019ContinuousLearning}.
 
-% \clearpage
+  \section{Problem Outline}
+  \label{sec:problem_outline}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% % [ ] What is Machine Learning Engineering?
-% Machine Learning Engineering (MLE) combines scientific principles, tools,
-% and techniques from both Machine Learning and Software Engineering to build
-% intelligent systems, including all stages from data collection to modeling
-% and delivery~\parencite{Burkov2020MachineEngineering}. MLE complements
-% Data Science by addressing the remaining infrastructure required by AI/ML
-% systems, encompassing their axes of change~\parencite{Ozkaya2020WhatSystems,
-% Sato2019ContinuousLearning}. Likewise, \emph{machine learning engineers}
-% are a new set of specialized software engineers that help data scientists
-% to build, deliver, and operate intelligent systems%
-% ~\mbox{\parencite{Burkov2020MachineEngineering,Lakshmanan2020MachinePatterns}}.
+  According to~\citeauthor{Burkov2020MachineEngineering}, the field of
+  \emph{Machine Learning Engineering} (MLE) combines scientific principles,
+  tools, and techniques from both \emph{Machine Learning} (ML) and
+  \emph{Software Engineering} (SWE) to build ML-enabled systems%
+  ~\parencite{Burkov2020MachineEngineering},
+  including all stages from data collection to modeling and delivery%
+  ~\parencite{Amershi2019SoftwareStudy,Burkov2020MachineEngineering,
+  Hilllaz2016TrialsStudy}.
+  MLE complements \emph{Data Science} (DS) by addressing the surrounding
+  infrastructure required by ML-enabled systems~\parencite{Nahar2021MoreProjects}.
+  % encompassing their axes of change: code, model, and data%
+  % ~\parencite{Alves2024PracticesReview,Sato2019ContinuousLearning}.
+  Likewise, \emph{Machine Learning Engineers} (MLEs) are a new set of
+  specialized developers that help data scientists to build, deliver,
+  and operate ML-enabled systems~\parencite{Burkov2020MachineEngineering,
+  Hilllaz2016TrialsStudy, Kreuzberger2023MachineArchitecture}.
+  % Lakshmanan2020MachineMLOps, Wilson2022MachineAction}.
 
-% % [ ] What is Intelligent Software Engineering? What is MLOps?
-% The study and adaptation of Software Engineering practices for AI/ML
-% systems have received different names in both academia and industry:
-% \begin{itemize}
-%   \item Intelligent Software Engineering -- ISE
-%         \parencite{Xie2018IntelligentEngineering},
-%   \item Software Engineering for Machine Learning -- SE4ML
-%         \parencite{Amershi2019SoftwareStudy,
-%                    Martinez-Fernandez2022SoftwareSurvey,
-%                    Sculley2015HiddenSystems}, and
-%   \item Software Engineering for Artificial Intelligence -- SE4AI 
-%         \parencite{Carleton2020TheSE,
-%                    Kastner2020TeachingSystems,
-%                    Martinez-Fernandez2022SoftwareSurvey,
-%                    Menzies2020TheAI}.
-% \end{itemize}
-% Although there is no consensus, the last term seems to be the most popular.
-% Nevertheless, this project will use them interchangeably.
+  The study of development practices and processes for ML-enabled systems
+  has been receiving different names%
+  \footnote{%
+    \emph{Artificial Intelligence for Software Engineering} (AI4SE) and 
+    synonyms describe the study of ML-enabled tools to assist development%
+    ~\parencite{Kastner2020TeachingSystems,Martinez-Fernandez2022SoftwareSurvey},
+    like when using \href{https://github.com/features/copilot}{GitHub Copilot}
+    % for software development.
+    They are not the focus of this research.
+  }. This research will adopt the latter:
+  %--------------------------------------------------------------------------%
+  \begin{itemize}
+    \item \emph{Intelligent Software Engineering} (ISE)
+          \parencite{Andrade2021ContinuousStudy,
+                     DeugoPatternsEngineering.,
+                     Xie2018IntelligentEngineering},
+    \item \emph{Software Engineering for Machine Learning} (SE4ML)
+          \parencite{Amershi2019SoftwareStudy,
+                     Lorenzoni2021MachineReview,
+                     Nascimento2020SoftwareReview,
+                     Martinez-Fernandez2022SoftwareSurvey,
+                     Sculley2015HiddenSystems}, and
+    \item \emph{Software Engineering for Artificial Intelligence} (SE4AI) 
+          \parencite{Carleton2020TheSE,
+                     Giray2021AChallenges,
+                     Heck2020TurningEngineers,
+                     Kastner2020TeachingSystems,
+                     Martinez-Fernandez2022SoftwareSurvey,
+                     Menzies2020TheAI}.
+  \end{itemize}
+  %--------------------------------------------------------------------------%
+  % Since the last term seems to be the most popular, this research will adopt it.
+  % Although there is no consensus, the last term seems to be the most popular
+  % in recent literature. Therefore, this research will adopt it.
 
-% % [ ] What is MLOps?
-% Among SE4AI practices, Continuous Delivery for Machine Learning (CD4ML)
-% has received particular attention~\parencite{Sato2019ContinuousLearning}.
-% It extends the concept of Continuous Delivery (CD) to address the
-% complexities of AI/ML systems. Meanwhile, Machine Learning Operations,
-% also known as MLOps, became a trend in academia and industry%
-% ~\parencite{Tamburri2020SustainableChallenges}. Inspired by the
-% DevOps movement, it describes a new generation of infrastructure tools
-% that help to manage different stages of the lifecycle of an intelligent system%
-% ~\mbox{\parencite{Gift2021PracticalModels,Stenac2020IntroducingMLOps}}.
-% In summary, MLOps enables CD4ML similarly to how DevOps enables CD.
+  % % [ ] What is MLOps?
+  Among SE4AI practices, \emph{Continuous Delivery for Machine Learning} (CD4ML)
+  has received particular attention~\parencite{Sato2019ContinuousLearning}.
+  It reuses the concept of \emph{Continuous Delivery} (CD)%
+  ~\parencite{Humble2010ContinuousAutomation}: applications should be developed
+  in small safe increments, and always be in a releasable state~\parencite{Kim2021TheOrganizations}.
+  However, it also extends it, considering ML-enabled systems can change because
+  of code, model, and data~\parencite{Sato2019ContinuousLearning}.
+  Meanwhile, the term \emph{Machine Learning Operations} (MLOps) became a trend
+  in academia and industry~\parencite{Tamburri2020SustainableChallenges}.
+  Inspired by \emph{DevOps}~\parencite{Forsgren2018Accelerate:Organizations,
+  Kim2016TheTeams}, it describes a new generation of infrastructure tools
+  to manage ML-enabled systems~\parencite{Gift2021PracticalModels,
+  Mboweni2022ADevOps,Stenac2020IntroducingMLOps}.
+  In summary, MLOps enables CD4ML similarly to how DevOps enables CD.
 
-% % [ ] Where are the limits of what we know?
-% MLE, SE4AI, CD4ML, and MLOps are all relatively new concepts.
-% % ~\parencite{Burkov2020MachineEngineering,Martinez-Fernandez2022SoftwareSurvey,
-% %             Sato2019ContinuousLearning,Tamburri2020SustainableChallenges}.
-% They were born from the challenges of delivering successful intelligent
-% systems, and they grow motivated by the potential impact of new AI/ML
-% products. Surveys evidence the growing interest in the subject, but also
-% highlight important gaps in the literature: it is an area in its infancy%
-% ~\parencite{Giray2021AChallenges, Martinez-Fernandez2022SoftwareSurvey, 
-% Tamburri2020SustainableChallenges}.
+  MLE, SE4AI, CD4ML, and MLOps are all relatively new concepts%
+  ~\parencite{Burkov2020MachineEngineering,Sato2019ContinuousLearning,
+  Tamburri2020SustainableChallenges},
+  whose relationships are an ongoing discussion%
+  ~\parencite{Kreuzberger2023MachineArchitecture,Wazir2023MLOps:Review}.
+  They were born from the challenges of delivering successful ML-enabled systems,
+  and they grow motivated by the potential impact of new AI/ML products.
+  The number of surveys published since 2022 evidence the interest in the area%
+  ~\parencite{
+    Diaz-De-Arcaya2023ASurvey,
+    FaustinoAmorim2023AnSurvey,
+    Foidl2024DataDevelopers,
+    % Giray2021AChallenges,
+    Kreuzberger2023MachineArchitecture,
+    % Jahic2020StateSystems,
+    % Lwakatare2020FromSystems,
+    Martinez-Fernandez2022SoftwareSurvey,
+    Mboweni2022ADevOps,
+    Priestley2023APipelines,
+    Paleyes2022ChallengesStudies,
+    Steidl2023ThePractice,
+    Wazir2023MLOps:Review,
+  }:
+  it is an area in its infancy.
+  
+  % Tamburri -> complexity is unsustainable!
+  % Giraya -> we need to handle complexity!
+  % Shankar -> practitioners want to avoid complexity! (they have their tricks for that)
 
-% Given this context, this Ph.D. research is driven by the general research
-% question: \emph{how can we reliably build, deliver and operate successful
-% intelligent systems?} Defining ``successful'' is a challenge on its own.
-% Nevertheless, this project will use the modern definition from the CHAOS
-% Report made by the Standish Group \parencite{Wojewoda2015CHAOS2015}:
-% the system was delivered on a reasonable estimated time, stayed on budget,
-% and delivered satisfaction for its users regardless of its original scope.
-% Therefore, to address this research question, the thesis of this Ph.D.
-% research is that it is possible to \emph{document processes and patterns
-% that allow the successful development of intelligent systems}.
+  While each survey summarizes important gaps in the SE4AI literature,
+  only \citeauthor{Giray2021AChallenges} highlights \emph{handling complexity}
+  as an open challenge for MLE~\parencite{Giray2021AChallenges}. However, this
+  idea is also supported by \citeauthor{Tamburri2020SustainableChallenges}, who
+  outlines challenges for sustainable AI~\parencite{Tamburri2020SustainableChallenges}.
+  \mbox{In an interview} study with 18 professional ML engineers%
+  ~\parencite{Shankar2022OperationalizingStudy},
+  \citeauthor{Shankar2022OperationalizingStudy} describe how participants
+  \Quote{expressed an aversion to complexity}, implying practitioners
+  consider it an issue.
 
-% This research internship project is divided as follows.
-%   \Cref{chap:fundamentals} further introduces concepts relevant
-%   to this research.
-%   \Cref{chap:objectives} presents the objectives for the research.
-%   Lastly, \Cref{chap:research_plan} shows the research plan with
-%   a timetable for its execution.
+  % Kreuzberger -> we need to coordinate components and infrastructure
+  % Diaz-de-Arcaya -> hard to modularize
+  % Hillaz -> discussing about complexity is not objective
+  % -> research gap => metrics about complexity to find where it is
+
+  The survey by \citeauthor{Diaz-De-Arcaya2023ASurvey} further
+  explores possible origins of complexity in ML-enabled systems%
+  ~\parencite{Diaz-De-Arcaya2023ASurvey}, all of which become
+  visible in the software architecture:
+  %--------------------------------------------------------------------------%
+  \begin{itemize}
+    \item they are harder to modularize,
+          since data modeling and data processing are highly coupled%
+          ~\parencite{Wan2021HowPractices};
+    \item they require an understanding of ML principles and techniques, 
+          with implications to the number of ML models required, their size,
+          versioning and tracking~\parencite{Lwakatare2020Large-ScaleSolutions,
+          Priestley2023APipelines}; and
+    \item they often have to handle Big Data~\parencite{Sagiroglu2013BigReview},
+          which leads them to adopt domain-specific distributed data
+          processing patterns~\parencite{Amershi2019SoftwareStudy,
+          Benton2020MachineApplications,Foidl2024DataDevelopers}.
+  \end{itemize}
+  %--------------------------------------------------------------------------%
+  
+  The field study carried out by~\citeauthor{Hilllaz2016TrialsStudy} discusses the
+  impact of such complexity for practitioners~\parencite{Hilllaz2016TrialsStudy}.
+  It was held with 11 participants with at least two years of experience
+  in the ML field.
+    Seasoned engineers described that developing ML-enabled systems
+    \Quote{required skills held only by certain `high priests'},
+    while debugging them was
+    \Quote{something akin to magic and even voodoo}%
+  ~\parencite{Hilllaz2016TrialsStudy}.
+  Such challenges become even more critical since ML-enabled systems need
+  to be updated and improved continuously~\parencite{Wan2021HowPractices}.
+  % These challenges to understand and communicate about complexity increases
+  % as ML-enabled systems need to be updated and improved continuously.
+
+  In summary, there is an opportunity for research about the complexity
+  of ML-enabled systems~\parencite{Giray2021AChallenges,
+  Shankar2022OperationalizingStudy,Tamburri2020SustainableChallenges},
+  which manifests directly in the software architecture%
+  ~\parencite{Diaz-De-Arcaya2023ASurvey}, challenging the \emph{evolution}
+  and \emph{maintainability} of these applications%
+  ~\parencite{Hilllaz2016TrialsStudy,Wan2021HowPractices}.
+  The many surveys in the literature show a general lack of studies
+  on \emph{metrics} for ML-enabled systems. Henceforth, this research
+  intends to explore this gap, thus understanding how metrics can help
+  to manage the architectural complexity of ML-enabled systems.
+
+  % The survey by \citeauthor{Kreuzberger2023MachineArchitecture} highlights
+  % how there is much literature on the challenge of creating ML models,
+  % but little on the problem of building and operating production-ready
+  % ML-enabled systems~\parencite{Kreuzberger2023MachineArchitecture}.
+  % \citeauthor{Diaz-De-Arcaya2023ASurvey} provides a possible explanation:
+  % the complexity of ML-enabled systems requires a high degree of expertise
+  % from developers.
+  
+  % building nor all components related to a ML-enabled system.
+  
+  \section{Research Questions}
+  \label{sec:research_questions}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  To achieve the goal of this research, this proposal introduces three main
+  research questions and two sub-questions. They follow the SMART principle%
+  ~\parencite{Verschuren2010DesigningDesign}, i.e., they should be
+  \emph{Specific, Measurable, Achievable, Relevant, and Time-Bound}.
+
+  %--------------------------------------------------------------------------%
+  \begin{researchquestion}
+    What are the measurable dimensions of complexity in
+    the architecture of ML-enabled systems?
+  \end{researchquestion}
+  %--------------------------------------------------------------------------%
+
+  The first research question aims to explore metrics related to
+  complexity available in the literature. \emph{Software Metrics}
+  have been thoroughly researched by Software Engineering%
+  ~\parencite{Fenton2014SoftwareEdition}.
+  However, ML-enabled systems also have their data and model dimensions%
+  ~\parencite{Alves2024PracticesReview,Sato2005RNAFields},
+  which affect the software architecture.
+  Finding metrics that measure the data- and model-related complexity 
+  \emph{beyond code} is the biggest potential challenge for
+  answering~\cref{rq:1}.
+
+  %--------------------------------------------------------------------------%
+  \begin{researchquestion}
+    How can complexity metrics be operationalized over
+    the architecture of ML-enabled systems?
+  \end{researchquestion}
+  %--------------------------------------------------------------------------%
+
+  The second research question aims to create a process to collect
+  the metrics found in \cref{rq:1}.
+  % ML-enabled systems have their own
+  % intricacies, which emerge as different design and architectural patterns
+  % ~\parencite{Lakshmanan2020MachinePatterns,Washizaki2019StudyingSystems}.
+  Metrics may be related to different abstraction levels of a system:
+  from code snippets, to components, to services%
+  ~\parencite{Fenton2014SoftwareEdition, Tu2009TheMetrics}.
+  Moreover, they can have varying levels of different quality attributes%
+  ~\parencite{Latva-Koivisto2001FindingModels, Polancic2017ComplexityReview},
+  such as validity, reliability, computability, intuitiveness,
+  ease of implementation, and independence of other metrics.
+  As a consequence, only some metrics found in \cref{rq:1} may
+  be practical or useful to collect. In particular, if two metrics
+  provide similar information, it will be preferable to use the best
+  according to the quality attributes. Regardless, all metrics should
+  be collected over exemplary projects, which can represent the
+  components of a common ML-enabled system. The subset of metrics
+  selected, and the requirements and techniques to measure them,
+  will compose the \emph{metrics-oriented architectural model}
+  this research proposes to create. Therefore, the challenge
+  for answering~\cref{rq:2} is twofold: finding exemplary projects
+  to collect the metrics, and then choosing the subset of metrics.
+  
+  % Measuring % a metric may require different levels of access to the system
+  % (e.g., having the codebase available for processing) or rely
+  % on different representations of the system (e.g., creating a
+  % graph describing its data flow).
+  % As a consequence, only some metrics found in \cref{rq:1} may
+  % be practical to collect. In particular, if two metrics provide
+  % similar information, it may be preferable to use the simpler.
+  
+  %--------------------------------------------------------------------------%
+  \begin{researchquestion}
+    How can complexity metrics be used to aid the development,
+    operation, and evolution of real-world ML-enabled systems?
+  \end{researchquestion}
+  %--------------------------------------------------------------------------%
+
+  The third research question aims to understand the usefulness and
+  potential impact of the \emph{metrics-oriented architectural model}
+  resulting from \cref{rq:2}. If the model succeeds in characterizing
+  the complexity, it should aid engineers building and maintaining
+  ML-enabled systems. Since this can happen in multiple ways, this
+  research will focus on two development tasks, described via the
+  following sub-questions of~\cref{rq:3}.
+  
+  %--------------------------------------------------------------------------%
+  \begin{subresearchquestion}
+    How can complexity metrics be used to choose between architecture
+    proposals for an ML-enabled system?
+  \end{subresearchquestion}
+  %--------------------------------------------------------------------------%
+
+  This sub-question aims to understand if the \emph{metrics-oriented
+  architectural model} proposed in \cref{rq:2} can help discussions
+  about how to \emph{evolve} ML-enabled systems. During the lifecycle of a
+  system, such discussions are usually motivated by new major functional
+  requirements. The goal is to \emph{avoid introducing accidental complexity},
+  since the more complex the system, the harder it is to understand
+  and maintain. For such purpose, metrics can be particularly useful
+  to objectively measure the impact of changes. The greatest challenge
+  for~\cref{rq:3.1} is to explain the \emph{metrics-oriented
+  architectural model} to developers, and then test if it improves
+  their ability to choose between architecture proposals.
+
+  %--------------------------------------------------------------------------%
+  \begin{subresearchquestion}
+    How can complexity metrics be used to identify refactoring
+    opportunities in an ML-enabled systems?
+  \end{subresearchquestion}
+  %--------------------------------------------------------------------------%
+
+  Similarly, this sub-question aims to understand if the
+  \emph{metrics-oriented architectural model} proposed in \cref{rq:2}
+  can help discussions about how to \emph{improve} ML-enabled systems.
+  During the lifecycle of a system, such discussions are usually motivated
+  by paying technical debt. The goal is to \emph{reduce accidental complexity},
+  since the more complex the system, the harder it is to understand and
+  maintain. For such purpose, metrics can be particularly useful to
+  objectively measure the impact of changes. The greatest challenge
+  for~\cref{rq:3.2} is to explain the \emph{metrics-oriented
+  architectural model} to developers, and then test if it improves
+  their ability to identify refactoring opportunities.
+
+  \section{Proposal Structure}
+  \label{sec:proposal_structure}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  The remaining of this proposal is structured as follows.
+    \Cref{chap:ml_enabled_systems} formally discusses the definition
+    of ML-enabled systems, discussing a reference architecture for
+    these systems.
+    \Cref{chap:the_spira_system} provides a real-world example of
+    an ML-enabled system, designed by the authors of this proposal.
+    \Cref{chap:research_methodology} delineates the research
+    methodology, whose goal is to answer the research questions
+    presented in \cref{chap:introduction}.
+    \Cref{chap:work_plan} presents the work plan to execute
+    this research.
+    Finally, \cref{app:related_activities} lists academic activities
+    related to this PhD.
+    % \Cref{chap:measuring_complexity} provides a preliminary literature
+    % review about software metrics.
